@@ -1,0 +1,368 @@
+<title>بوابة نجاح العملاء | CSM Portal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg:#F5F9F9;
+    --surface:#FFFFFF;
+    --surface-2:#EEF6F6;
+    --border:#DBE7E7;
+    --border-soft:#E7EFEF;
+    --text:#132226;
+    --text-muted:#5B6E72;
+    --text-faint:#8CA0A3;
+
+    --teal:#00A4A6;
+    --teal-dark:#007B7D;
+    --teal-tint:#E1F5F5;
+    --teal-ink:#0A4344;
+
+    --purple:#653165;
+    --purple-dark:#4B234B;
+    --purple-tint:#F0E6F0;
+    --purple-ink:#3E1D3E;
+
+    --amber:#B9740F;
+    --amber-dark:#8F590B;
+    --amber-tint:#FBF0DD;
+    --amber-ink:#5C3B08;
+
+    --shadow-sm:0 1px 2px rgba(19,34,38,.05);
+    --shadow-md:0 10px 28px -14px rgba(19,34,38,.28);
+    --radius:14px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0D1517;
+      --surface:#141F21;
+      --surface-2:#182426;
+      --border:#25373A;
+      --border-soft:#1E2E30;
+      --text:#EAF3F3;
+      --text-muted:#9BB0B3;
+      --text-faint:#6C8285;
+
+      --teal:#2FC7C7;
+      --teal-dark:#5CDBDA;
+      --teal-tint:rgba(47,199,199,.13);
+      --teal-ink:#8EEBEB;
+
+      --purple:#C48FC4;
+      --purple-dark:#D9AED9;
+      --purple-tint:rgba(196,143,196,.14);
+      --purple-ink:#E3BEE3;
+
+      --amber:#E3A64B;
+      --amber-dark:#F0BE71;
+      --amber-tint:rgba(227,166,75,.14);
+      --amber-ink:#F2C989;
+
+      --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+      --shadow-md:0 14px 32px -16px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D1517;
+    --surface:#141F21;
+    --surface-2:#182426;
+    --border:#25373A;
+    --border-soft:#1E2E30;
+    --text:#EAF3F3;
+    --text-muted:#9BB0B3;
+    --text-faint:#6C8285;
+
+    --teal:#2FC7C7;
+    --teal-dark:#5CDBDA;
+    --teal-tint:rgba(47,199,199,.13);
+    --teal-ink:#8EEBEB;
+
+    --purple:#C48FC4;
+    --purple-dark:#D9AED9;
+    --purple-tint:rgba(196,143,196,.14);
+    --purple-ink:#E3BEE3;
+
+    --amber:#E3A64B;
+    --amber-dark:#F0BE71;
+    --amber-tint:rgba(227,166,75,.14);
+    --amber-ink:#F2C989;
+
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow-md:0 14px 32px -16px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  html{color-scheme:light dark;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Cairo','IBM Plex Sans Arabic',sans-serif;
+    text-wrap:balance;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--teal-tint);}
+  :focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:6px;}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .topbar-inner{
+    max-width:1180px;margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(135deg,var(--teal),var(--purple));
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;flex-shrink:0;box-shadow:var(--shadow-sm);
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.35;}
+  .brand-text b{font-family:'Cairo',sans-serif;font-size:16px;font-weight:800;}
+  .brand-text span{font-size:11.5px;color:var(--text-faint);letter-spacing:.03em;}
+  .quicknav{display:flex;gap:6px;flex-wrap:wrap;}
+  .quicknav a{
+    font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;
+    border:1px solid var(--border);color:var(--text-muted);
+    transition:.15s ease;white-space:nowrap;
+  }
+  .quicknav a:hover{border-color:var(--teal);color:var(--teal-dark);background:var(--teal-tint);}
+
+  /* ===== Hero ===== */
+  .hero{max-width:1180px;margin:0 auto;padding:44px 28px 18px;}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:700;color:var(--teal-dark);
+    background:var(--teal-tint);padding:6px 13px;border-radius:999px;margin-bottom:16px;
+  }
+  .hero h1{font-size:34px;font-weight:800;color:var(--text);}
+  .hero p{
+    margin:12px 0 0;max-width:62ch;color:var(--text-muted);
+    font-size:15.5px;line-height:1.85;
+  }
+
+  /* ===== Section ===== */
+  .section{max-width:1180px;margin:0 auto;padding:34px 28px 8px;scroll-margin-top:82px;}
+  .section-head{
+    display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;
+    padding-inline-start:16px;border-inline-start:3px solid var(--accent,var(--teal));
+  }
+  .section-icon{
+    width:46px;height:46px;border-radius:12px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:21px;
+    background:var(--accent-tint,var(--teal-tint));
+  }
+  .section-titles h2{font-size:21px;font-weight:800;color:var(--text);}
+  .section-titles .en{
+    font-size:12px;font-weight:600;color:var(--text-faint);
+    letter-spacing:.06em;text-transform:uppercase;margin-top:2px;
+  }
+  .section-desc{font-size:13.5px;color:var(--text-muted);margin-top:8px;line-height:1.8;max-width:70ch;}
+
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));
+    gap:16px;padding-bottom:8px;
+  }
+
+  /* ===== Card ===== */
+  .card{
+    display:flex;flex-direction:column;gap:12px;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow-sm);
+    transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent,var(--teal));}
+  .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .card-icon{
+    width:38px;height:38px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:17px;
+    background:var(--accent-tint,var(--teal-tint));color:var(--accent-ink,var(--teal-ink));
+  }
+  .card-go{
+    font-size:12px;font-weight:700;color:var(--accent,var(--teal));
+    opacity:0;transform:translateX(4px);transition:.16s ease;
+  }
+  [dir="rtl"] .card-go{transform:translateX(-4px);}
+  .card:hover .card-go{opacity:1;transform:translateX(0);}
+  .card-title{font-size:16px;font-weight:700;color:var(--text);}
+  .card-title .en{
+    display:block;font-size:11.5px;font-weight:600;color:var(--text-faint);
+    letter-spacing:.03em;margin-top:3px;direction:ltr;text-align:right;
+  }
+  .card-desc{font-size:13px;color:var(--text-muted);line-height:1.75;flex:1;}
+  .card-url{
+    font-size:11px;color:var(--text-faint);direction:ltr;text-align:right;
+    padding-top:10px;border-top:1px dashed var(--border-soft);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+
+  /* ===== Empty state ===== */
+  .empty{
+    border:1.5px dashed var(--border);border-radius:var(--radius);
+    padding:34px 24px;text-align:center;background:var(--surface-2);
+  }
+  .empty-icon{font-size:24px;margin-bottom:10px;}
+  .empty b{display:block;font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:4px;}
+  .empty span{font-size:13px;color:var(--text-muted);}
+
+  /* section accent bindings */
+  #knowledge{--accent:var(--teal);--accent-tint:var(--teal-tint);--accent-ink:var(--teal-ink);}
+  #tools{--accent:var(--purple);--accent-tint:var(--purple-tint);--accent-ink:var(--purple-ink);}
+  #quality{--accent:var(--amber);--accent-tint:var(--amber-tint);--accent-ink:var(--amber-ink);}
+
+  footer{
+    max-width:1180px;margin:36px auto 0;padding:22px 28px 40px;
+    border-top:1px solid var(--border-soft);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+  }
+  footer span{font-size:12px;color:var(--text-faint);}
+
+  @media (max-width:640px){
+    .hero h1{font-size:26px;}
+    .section-head{flex-direction:column;gap:10px;padding-inline-start:14px;}
+  }
+</style>
+
+<body dir="rtl" lang="ar">
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">🧭</div>
+        <div class="brand-text">
+          <b>بوابة نجاح العملاء</b>
+          <span>CSM PORTAL · رِواء</span>
+        </div>
+      </div>
+      <nav class="quicknav">
+        <a href="#knowledge">📚 المصادر المعرفية</a>
+        <a href="#tools">🧰 البرامج والأدوات</a>
+        <a href="#quality">✅ الالتزام والجودة</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-eyebrow">🧭 المرجع الموحّد لفريق نجاح العملاء</div>
+    <h1>كل شي تحتاجه بمكان واحد</h1>
+    <p>بوابة داخلية تجمع مصادر المعرفة، والأنظمة والأدوات التشغيلية، وتعليمات الالتزام والجودة الخاصة بفريق نجاح العملاء — اضغط على أي بطاقة عشان تفتح الصفحة أو الأداة مباشرة.</p>
+  </div>
+
+  <!-- ============ Section 1: المصادر المعرفية ============ -->
+  <section class="section" id="knowledge">
+    <div class="section-head">
+      <div class="section-icon">📚</div>
+      <div class="section-titles">
+        <h2>المصادر المعرفية</h2>
+        <div class="en">Knowledge Resources</div>
+        <div class="section-desc">الأنظمة والصفحات المرجعية يلي بتشرح رحلة العميل ومراحلها — من التفعيل والإعداد إلى التصنيف والحالات.</div>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <a class="card" href="https://fyousef-2023.github.io/CSM_Stages/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🚀</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">مراحل التفعيل<span class="en">Activation</span></div>
+        <div class="card-desc">تتبّع رحلة تفعيل حساب العميل مرحلة بمرحلة، من بداية الاشتراك حتى اكتمال الاستخدام الفعلي للنظام.</div>
+        <div class="card-url">fyousef-2023.github.io/CSM_Stages</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">⚙️</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
+        <div class="card-desc">خارطة تفاعلية لخطوات أتمتة تأهيل العميل الجديد (Onboarding) ونقاط التسليم بين الفرق المعنية.</div>
+        <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/Tag/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🏷️</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">نظام التصنيفات<span class="en">Tags</span></div>
+        <div class="card-desc">مرجع تصنيفات (Tags) الحسابات والحالات المستخدمة لتنظيم المتابعة والتقارير بشكل موحّد.</div>
+        <div class="card-url">fyousef-2023.github.io/Tag</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/CasesV2/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🗂️</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">دليل إدارة الحالات<span class="en">Cases</span></div>
+        <div class="card-desc">دليل شامل لأنواع الحالات (Cases) وحالاتها المختلفة، وخطوات التعامل الصحيحة مع كل نوع.</div>
+        <div class="card-url">fyousef-2023.github.io/CasesV2</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🏛️</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">منصة منشآت<span class="en">Monshaat</span></div>
+        <div class="card-desc">صفحة مرجعية لبرنامج منشآت وعلاقته بخدمات ودعم عملاء رِواء.</div>
+        <div class="card-url">fyousef-2023.github.io/monshaat</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ Section 2: البرامج والأدوات ============ -->
+  <section class="section" id="tools">
+    <div class="section-head">
+      <div class="section-icon">🧰</div>
+      <div class="section-titles">
+        <h2>البرامج والأدوات</h2>
+        <div class="en">Programs &amp; Tools</div>
+        <div class="section-desc">الأنظمة والبرامج التشغيلية يلي يستخدمها موظف نجاح العملاء بشكل يومي.</div>
+      </div>
+    </div>
+
+    <div class="empty">
+      <div class="empty-icon">🧰</div>
+      <b>القسم قيد الإعداد</b>
+      <span>جارٍ العمل حالياً على إضافة البرامج والأدوات الخاصة بهذا القسم.</span>
+    </div>
+  </section>
+
+  <!-- ============ Section 3: الالتزام والجودة ============ -->
+  <section class="section" id="quality">
+    <div class="section-head">
+      <div class="section-icon">✅</div>
+      <div class="section-titles">
+        <h2>تعليمات الالتزام والجودة</h2>
+        <div class="en">Compliance &amp; Quality</div>
+        <div class="section-desc">السياسات والمعايير يلي بتضمن جودة التعامل مع العميل والتزام الفريق بمعايير رِواء.</div>
+      </div>
+    </div>
+
+    <div class="empty">
+      <div class="empty-icon">✅</div>
+      <b>القسم قيد الإعداد</b>
+      <span>جارٍ العمل حالياً على إضافة تعليمات الالتزام والجودة الخاصة بهذا القسم.</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>إعداد: قسم الجودة — فريق نجاح العملاء · رِواء</span>
+    <span>آخر تحديث: سبتمبر 2026</span>
+  </footer>
+
+</body>
