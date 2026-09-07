@@ -174,6 +174,25 @@
     gap:16px;padding-bottom:8px;
   }
 
+  /* ===== Row groups (fixed-count rows for guided sequence) ===== */
+  .row-group{margin-bottom:26px;}
+  .row-group:last-child{margin-bottom:0;}
+  .row-label{
+    display:flex;align-items:center;gap:8px;
+    font-size:12px;font-weight:800;color:var(--accent,var(--teal));
+    letter-spacing:.04em;margin-bottom:10px;
+  }
+  .row-label::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--accent,var(--teal));flex-shrink:0;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .grid-1{display:grid;grid-template-columns:minmax(240px,360px);gap:16px;}
+  @media (max-width:900px){
+    .grid-3{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:640px){
+    .grid-2,.grid-3,.grid-1{grid-template-columns:1fr;}
+  }
+
   /* ===== Card ===== */
   .card{
     display:flex;flex-direction:column;gap:12px;
@@ -291,166 +310,211 @@
       </div>
     </div>
 
-    <div class="grid">
+    <!-- الصف 1 — التفعيل -->
+    <div class="row-group">
+      <div class="row-label">التفعيل</div>
+      <div class="grid-2">
 
-      <a class="card" href="https://fyousef-2023.github.io/CSM_Stages/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🚀</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">مراحل التفعيل<span class="en">Activation</span></div>
-        <div class="card-desc">تتبّع رحلة تفعيل حساب العميل مرحلة بمرحلة، من بداية الاشتراك حتى اكتمال الاستخدام الفعلي للنظام.</div>
-        <div class="card-url">fyousef-2023.github.io/CSM_Stages</div>
-      </a>
+        <a class="card" href="https://fyousef-2023.github.io/CSM_Stages/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🚀</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">مراحل التفعيل<span class="en">Activation</span></div>
+          <div class="card-desc">تتبّع رحلة تفعيل حساب العميل مرحلة بمرحلة، من بداية الاشتراك حتى اكتمال الاستخدام الفعلي للنظام.</div>
+          <div class="card-url">fyousef-2023.github.io/CSM_Stages</div>
+        </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">⚙️</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
-        <div class="card-desc">خارطة تفاعلية لخطوات أتمتة تأهيل العميل الجديد (Onboarding) ونقاط التسليم بين الفرق المعنية.</div>
-        <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
-      </a>
+        <a class="card" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">⚙️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
+          <div class="card-desc">خارطة تفاعلية لخطوات أتمتة تأهيل العميل الجديد (Onboarding) ونقاط التسليم بين الفرق المعنية.</div>
+          <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
+        </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/Tag/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🏷️</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">نظام التصنيفات<span class="en">Tags</span></div>
-        <div class="card-desc">مرجع تصنيفات (Tags) الحسابات والحالات المستخدمة لتنظيم المتابعة والتقارير بشكل موحّد.</div>
-        <div class="card-url">fyousef-2023.github.io/Tag</div>
-      </a>
-
-      <a class="card" href="https://fyousef-2023.github.io/CasesV2/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🗂️</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">دليل إدارة الحالات<span class="en">Cases</span></div>
-        <div class="card-desc">دليل شامل لأنواع الحالات (Cases) وحالاتها المختلفة، وخطوات التعامل الصحيحة مع كل نوع.</div>
-        <div class="card-url">fyousef-2023.github.io/CasesV2</div>
-      </a>
-
-      <a class="card" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🏛️</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">منصة منشآت<span class="en">Monshaat</span></div>
-        <div class="card-desc">صفحة مرجعية لبرنامج منشآت وعلاقته بخدمات نجاح عملاء رِواء.</div>
-        <div class="card-url">fyousef-2023.github.io/monshaat</div>
-      </a>
-
-      <a class="card" href="https://fyousef-2023.github.io/Grubtech_CSM_Guide/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🍽️</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">دليل عملاء Grubtech<span class="en">Grubtech CSM Guide</span></div>
-        <div class="card-desc">دليل التعامل مع عملاء Grubtech واحتياجاتهم الخاصة — كيف تخدمهم صح.</div>
-        <div class="card-url">fyousef-2023.github.io/Grubtech_CSM_Guide</div>
-      </a>
-
-      <a class="card" href="https://docs.google.com/document/d/1KqWFCuq4a_yS1yQZZy956dPUiQ71gbqn816GaMN3Jdo/edit?tab=t.0#heading=h.2gt4uk9n01mo" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🌟</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">تقييم NPS العالمي<span class="en">Global NPS Survey</span></div>
-        <div class="card-desc">مقياس الرضا العالمي (NPS) الذي يقيس مدى استعداد العميل لترشيح رِواء — متوقف حالياً عن المتابعة في Open CX.</div>
-        <div class="card-url">docs.google.com/document/d/1KqWFCuq…</div>
-      </a>
-
-      <a class="card" href="https://rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">📋</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">SOP — إجراءات العمل الموحّدة<span class="en">Standard Operating Procedures</span></div>
-        <div class="card-desc">مرجع الحالات والإجراءات الموحّدة — كيف تتعامل مع كل سيناريو بشكل صحيح. سيتم إطلاقها قريباً.</div>
-        <div class="card-url">rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder</div>
-      </a>
-
-      <a class="card" href="https://scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg/page/mqdmh_wtahyl_lmnsh_rwaa__Kmel96usRmG1o_ezZuopJQ" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🏢</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">مقدمة وتأهيل منصة رِواء<span class="en">Rewaa Platform Introduction</span></div>
-        <div class="card-desc">تعريف بمنصة رِواء السحابية ومتطلبات تشغيلها، مع روابط للتعرف على الشركة وأكاديميتها وتسجيل الدخول وإنشاء الحساب.</div>
-        <div class="card-url">scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg…</div>
-      </a>
-
-      <a class="card" href="https://help.rewaa.com/ar-SA" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🛟</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">مركز المساعدة<span class="en">Rewaa Help Center</span></div>
-        <div class="card-desc">مركز مساعدة رِواء الرسمي، يُحدَّث باستمرار من قسم تجربة العميل بمقالات ودلائل الاستخدام.</div>
-        <div class="card-url">help.rewaa.com/ar-SA</div>
-      </a>
-
-      <a class="card" href="https://www.youtube.com/@RewaaTechnology/playlists" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">▶️</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">قناة رِواء على يوتيوب<span class="en">Rewaa YouTube Channel</span></div>
-        <div class="card-desc">قوائم تشغيل فيديو تعليمية وتعريفية بمنتجات وخدمات رِواء.</div>
-        <div class="card-url">youtube.com/@RewaaTechnology/playlists</div>
-      </a>
-
-      <a class="card" href="https://docs.google.com/spreadsheets/d/1rnUH9_MxW3TWzqNzVJdiSH9AE3U1gHnpN2uBnJBQFGA/edit?gid=0#gid=0" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">💬</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">دليل الردود السريعة<span class="en">Open CX Quick Replies</span></div>
-        <div class="card-desc">قائمة الردود الجاهزة (Quick Replies) المستخدمة داخل منصة Open CX لتوحيد أسلوب التواصل مع العميل.</div>
-        <div class="card-url">docs.google.com/spreadsheets/d/1rnUH9_Mx…</div>
-      </a>
-
-      <div class="card-group">
-        <div class="card-top">
-          <div class="card-icon">📦</div>
-        </div>
-        <div class="card-title">الباقات<span class="en">Packages</span></div>
-        <div class="card-desc">روابط باقات رِواء الحالية والقديمة، لمراجعة خصائص كل باقة عند التعامل مع العميل.</div>
-        <div class="sublinks">
-          <a class="sublink" href="https://docs.google.com/spreadsheets/d/10bHxn4LEatHGz632ARZuOhelO5fNHqvp7XegbSJWUDg/edit" target="_blank" rel="noopener"><span>باقات مزايا ومنشآت</span><span class="arrow">↖</span></a>
-          <a class="sublink" href="https://docs.google.com/spreadsheets/d/1Q8OzseapsSu_fvMd17344ITtiJaM0nru5pcbRRE_bog/edit?gid=0#gid=0" target="_blank" rel="noopener"><span>باقات رِواء</span><span class="arrow">↖</span></a>
-          <a class="sublink" href="https://docs.google.com/spreadsheets/d/1xg93EOiVY-5Q-NUfYh2G4aH_gNvV-fgcnf3bsWCPd2k/edit?gid=688925703#gid=688925703" target="_blank" rel="noopener"><span>الباقات القديمة — مرجع خصائص كل باقة</span><span class="arrow">↖</span></a>
-        </div>
       </div>
+    </div>
 
-      <div class="card-group">
-        <div class="card-top">
-          <div class="card-icon">🖥️</div>
-        </div>
-        <div class="card-title">الأجهزة<span class="en">Devices</span></div>
-        <div class="card-desc">أسعار الأجهزة الجديدة، وتتبع شحنات الأجهزة المرسلة للعميل.</div>
-        <div class="sublinks">
-          <a class="sublink" href="https://docs.google.com/spreadsheets/d/1DSDjrcTG-pEnnJM0PN98v1MIajgEv3bsp-lKoiSy9GI/edit" target="_blank" rel="noopener"><span>أسعار الأجهزة الجديدة</span><span class="arrow">↖</span></a>
-          <a class="sublink" href="https://torod.co/ar/order/tracking/1EpEBSie" target="_blank" rel="noopener"><span>تتبع شحنة الأجهزة</span><span class="arrow">↖</span></a>
-        </div>
+    <!-- الصف 2 — إعادة التفعيل -->
+    <div class="row-group">
+      <div class="row-label">إعادة التفعيل</div>
+      <div class="grid-1">
+
+        <a class="card" href="https://fyousef-2023.github.io/Reactivation/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🔁</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">إعادة التفعيل<span class="en">Customer Reactivation</span></div>
+          <div class="card-desc">رحلة إعادة تفعيل العميل المتوقف عن الاستخدام، من رصد التوقف حتى عودته للنشاط الفعلي.</div>
+          <div class="card-url">fyousef-2023.github.io/Reactivation</div>
+        </a>
+
       </div>
+    </div>
 
-      <div class="card-group">
-        <div class="card-top">
-          <div class="card-icon">🎓</div>
-        </div>
-        <div class="card-title">التدريب<span class="en">Training</span></div>
-        <div class="card-desc">روابط الويبنارات التدريبية والجلسات المسجلة، مع قناة التحديثات الخاصة بالتدريب.</div>
-        <div class="sublinks">
-          <a class="sublink" href="https://s.rewaa.com/webinars-training/" target="_blank" rel="noopener"><span>رابط الويبنار</span><span class="arrow">↖</span></a>
-          <a class="sublink" href="https://drive.google.com/drive/folders/1J9dUikBIglojA4HnFrphd-ZHBxc3OWUr" target="_blank" rel="noopener"><span>درايف الجلسات المسجلة</span><span class="arrow">↖</span></a>
-          <div class="sublink-note">📣 تحديثات التدريب على Slack: <b>webinar-training-csm</b></div>
-        </div>
+    <!-- الصف 3 — إدارة الحالات -->
+    <div class="row-group">
+      <div class="row-label">إدارة الحالات</div>
+      <div class="grid-3">
+
+        <a class="card" href="https://fyousef-2023.github.io/CasesV2/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🗂️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">دليل إدارة الحالات<span class="en">Cases</span></div>
+          <div class="card-desc">دليل شامل لأنواع الحالات (Cases) وحالاتها المختلفة، وخطوات التعامل الصحيحة مع كل نوع.</div>
+          <div class="card-url">fyousef-2023.github.io/CasesV2</div>
+        </a>
+
+        <a class="card" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">⚙️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
+          <div class="card-desc">خارطة تفاعلية لخطوات أتمتة تأهيل العميل الجديد (Onboarding) ونقاط التسليم بين الفرق المعنية.</div>
+          <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
+        </a>
+
+        <a class="card" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🏛️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">منصة منشآت<span class="en">Monshaat</span></div>
+          <div class="card-desc">صفحة مرجعية لبرنامج منشآت وعلاقته بخدمات نجاح عملاء رِواء.</div>
+          <div class="card-url">fyousef-2023.github.io/monshaat</div>
+        </a>
+
       </div>
+    </div>
 
+    <!-- الصف 4 -->
+    <div class="row-group">
+      <div class="grid-3">
+
+        <a class="card" href="https://fyousef-2023.github.io/Grubtech_CSM_Guide/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🍽️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">دليل عملاء Grubtech<span class="en">Grubtech CSM Guide</span></div>
+          <div class="card-desc">دليل التعامل مع عملاء Grubtech واحتياجاتهم الخاصة — كيف تخدمهم صح.</div>
+          <div class="card-url">fyousef-2023.github.io/Grubtech_CSM_Guide</div>
+        </a>
+
+        <a class="card" href="https://docs.google.com/document/d/1KqWFCuq4a_yS1yQZZy956dPUiQ71gbqn816GaMN3Jdo/edit?tab=t.0#heading=h.2gt4uk9n01mo" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🌟</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">تقييم NPS العالمي<span class="en">Global NPS Survey</span></div>
+          <div class="card-desc">مقياس الرضا العالمي (NPS) الذي يقيس مدى استعداد العميل لترشيح رِواء — متوقف حالياً عن المتابعة في Open CX.</div>
+          <div class="card-url">docs.google.com/document/d/1KqWFCuq…</div>
+        </a>
+
+        <a class="card" href="https://rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">📋</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">SOP — إجراءات العمل الموحّدة<span class="en">Standard Operating Procedures</span></div>
+          <div class="card-desc">مرجع الحالات والإجراءات الموحّدة — كيف تتعامل مع كل سيناريو بشكل صحيح. سيتم إطلاقها قريباً.</div>
+          <div class="card-url">rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- الصف 5 — بقية المصادر المعرفية -->
+    <div class="row-group">
+      <div class="row-label">بقية المصادر المعرفية</div>
+      <div class="grid">
+
+        <a class="card" href="https://scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg/page/mqdmh_wtahyl_lmnsh_rwaa__Kmel96usRmG1o_ezZuopJQ" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🏢</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">مقدمة وتأهيل منصة رِواء<span class="en">Rewaa Platform Introduction</span></div>
+          <div class="card-desc">تعريف بمنصة رِواء السحابية ومتطلبات تشغيلها، مع روابط للتعرف على الشركة وأكاديميتها وتسجيل الدخول وإنشاء الحساب.</div>
+          <div class="card-url">scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg…</div>
+        </a>
+
+        <a class="card" href="https://help.rewaa.com/ar-SA" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🛟</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">مركز المساعدة<span class="en">Rewaa Help Center</span></div>
+          <div class="card-desc">مركز مساعدة رِواء الرسمي، يُحدَّث باستمرار من قسم تجربة العميل بمقالات ودلائل الاستخدام.</div>
+          <div class="card-url">help.rewaa.com/ar-SA</div>
+        </a>
+
+        <a class="card" href="https://www.youtube.com/@RewaaTechnology/playlists" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">▶️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">قناة رِواء على يوتيوب<span class="en">Rewaa YouTube Channel</span></div>
+          <div class="card-desc">قوائم تشغيل فيديو تعليمية وتعريفية بمنتجات وخدمات رِواء.</div>
+          <div class="card-url">youtube.com/@RewaaTechnology/playlists</div>
+        </a>
+
+        <a class="card" href="https://docs.google.com/spreadsheets/d/1rnUH9_MxW3TWzqNzVJdiSH9AE3U1gHnpN2uBnJBQFGA/edit?gid=0#gid=0" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">💬</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">دليل الردود السريعة<span class="en">Open CX Quick Replies</span></div>
+          <div class="card-desc">قائمة الردود الجاهزة (Quick Replies) المستخدمة داخل منصة Open CX لتوحيد أسلوب التواصل مع العميل.</div>
+          <div class="card-url">docs.google.com/spreadsheets/d/1rnUH9_Mx…</div>
+        </a>
+
+        <div class="card-group">
+          <div class="card-top">
+            <div class="card-icon">📦</div>
+          </div>
+          <div class="card-title">الباقات<span class="en">Packages</span></div>
+          <div class="card-desc">روابط باقات رِواء الحالية والقديمة، لمراجعة خصائص كل باقة عند التعامل مع العميل.</div>
+          <div class="sublinks">
+            <a class="sublink" href="https://docs.google.com/spreadsheets/d/10bHxn4LEatHGz632ARZuOhelO5fNHqvp7XegbSJWUDg/edit" target="_blank" rel="noopener"><span>باقات مزايا ومنشآت</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://docs.google.com/spreadsheets/d/1Q8OzseapsSu_fvMd17344ITtiJaM0nru5pcbRRE_bog/edit?gid=0#gid=0" target="_blank" rel="noopener"><span>باقات رِواء</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://docs.google.com/spreadsheets/d/1xg93EOiVY-5Q-NUfYh2G4aH_gNvV-fgcnf3bsWCPd2k/edit?gid=688925703#gid=688925703" target="_blank" rel="noopener"><span>الباقات القديمة — مرجع خصائص كل باقة</span><span class="arrow">↖</span></a>
+          </div>
+        </div>
+
+        <div class="card-group">
+          <div class="card-top">
+            <div class="card-icon">🖥️</div>
+          </div>
+          <div class="card-title">الأجهزة<span class="en">Devices</span></div>
+          <div class="card-desc">أسعار الأجهزة الجديدة، وتتبع شحنات الأجهزة المرسلة للعميل.</div>
+          <div class="sublinks">
+            <a class="sublink" href="https://docs.google.com/spreadsheets/d/1DSDjrcTG-pEnnJM0PN98v1MIajgEv3bsp-lKoiSy9GI/edit" target="_blank" rel="noopener"><span>أسعار الأجهزة الجديدة</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://torod.co/ar/order/tracking/1EpEBSie" target="_blank" rel="noopener"><span>تتبع شحنة الأجهزة</span><span class="arrow">↖</span></a>
+          </div>
+        </div>
+
+        <div class="card-group">
+          <div class="card-top">
+            <div class="card-icon">🎓</div>
+          </div>
+          <div class="card-title">التدريب<span class="en">Training</span></div>
+          <div class="card-desc">روابط الويبنارات التدريبية والجلسات المسجلة، مع قناة التحديثات الخاصة بالتدريب.</div>
+          <div class="sublinks">
+            <a class="sublink" href="https://s.rewaa.com/webinars-training/" target="_blank" rel="noopener"><span>رابط الويبنار</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://drive.google.com/drive/folders/1J9dUikBIglojA4HnFrphd-ZHBxc3OWUr" target="_blank" rel="noopener"><span>درايف الجلسات المسجلة</span><span class="arrow">↖</span></a>
+            <div class="sublink-note">📣 تحديثات التدريب على Slack: <b>webinar-training-csm</b></div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
