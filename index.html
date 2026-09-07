@@ -206,6 +206,28 @@
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   }
 
+  /* ===== Grouped card (multiple sub-links) ===== */
+  .card-group{
+    display:flex;flex-direction:column;gap:12px;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow-sm);
+  }
+  .sublinks{display:flex;flex-direction:column;gap:8px;margin-top:2px;}
+  .sublink{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:9px 12px;border-radius:10px;background:var(--surface-2);
+    border:1px solid var(--border-soft);
+    font-size:12.5px;color:var(--text);text-decoration:none;
+    transition:.15s ease;
+  }
+  .sublink:hover{border-color:var(--accent,var(--teal));background:var(--accent-tint,var(--teal-tint));}
+  .sublink .arrow{color:var(--accent,var(--teal));font-size:12px;flex-shrink:0;}
+  .sublink-note{
+    display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;
+    background:var(--surface-2);border:1px dashed var(--border);
+    font-size:12px;color:var(--text-faint);
+  }
+
   /* ===== Empty state ===== */
   .empty{
     border:1.5px dashed var(--border);border-radius:var(--radius);
@@ -390,6 +412,44 @@
         <div class="card-desc">قائمة الردود الجاهزة (Quick Replies) المستخدمة داخل منصة Open CX لتوحيد أسلوب التواصل مع العميل.</div>
         <div class="card-url">docs.google.com/spreadsheets/d/1rnUH9_Mx…</div>
       </a>
+
+      <div class="card-group">
+        <div class="card-top">
+          <div class="card-icon">📦</div>
+        </div>
+        <div class="card-title">الباقات<span class="en">Packages</span></div>
+        <div class="card-desc">روابط باقات رِواء الحالية والقديمة، لمراجعة خصائص كل باقة عند التعامل مع العميل.</div>
+        <div class="sublinks">
+          <a class="sublink" href="https://docs.google.com/spreadsheets/d/10bHxn4LEatHGz632ARZuOhelO5fNHqvp7XegbSJWUDg/edit" target="_blank" rel="noopener"><span>باقات مزايا ومنشآت</span><span class="arrow">↖</span></a>
+          <a class="sublink" href="https://docs.google.com/spreadsheets/d/1Q8OzseapsSu_fvMd17344ITtiJaM0nru5pcbRRE_bog/edit?gid=0#gid=0" target="_blank" rel="noopener"><span>باقات رِواء</span><span class="arrow">↖</span></a>
+          <a class="sublink" href="https://docs.google.com/spreadsheets/d/1xg93EOiVY-5Q-NUfYh2G4aH_gNvV-fgcnf3bsWCPd2k/edit?gid=688925703#gid=688925703" target="_blank" rel="noopener"><span>الباقات القديمة — مرجع خصائص كل باقة</span><span class="arrow">↖</span></a>
+        </div>
+      </div>
+
+      <div class="card-group">
+        <div class="card-top">
+          <div class="card-icon">🖥️</div>
+        </div>
+        <div class="card-title">الأجهزة<span class="en">Devices</span></div>
+        <div class="card-desc">أسعار الأجهزة الجديدة، وتتبع شحنات الأجهزة المرسلة للعميل.</div>
+        <div class="sublinks">
+          <a class="sublink" href="https://docs.google.com/spreadsheets/d/1DSDjrcTG-pEnnJM0PN98v1MIajgEv3bsp-lKoiSy9GI/edit" target="_blank" rel="noopener"><span>أسعار الأجهزة الجديدة</span><span class="arrow">↖</span></a>
+          <a class="sublink" href="https://torod.co/ar/order/tracking/1EpEBSie" target="_blank" rel="noopener"><span>تتبع شحنة الأجهزة</span><span class="arrow">↖</span></a>
+        </div>
+      </div>
+
+      <div class="card-group">
+        <div class="card-top">
+          <div class="card-icon">🎓</div>
+        </div>
+        <div class="card-title">التدريب<span class="en">Training</span></div>
+        <div class="card-desc">روابط الويبنارات التدريبية والجلسات المسجلة، مع قناة التحديثات الخاصة بالتدريب.</div>
+        <div class="sublinks">
+          <a class="sublink" href="https://s.rewaa.com/webinars-training/" target="_blank" rel="noopener"><span>رابط الويبنار</span><span class="arrow">↖</span></a>
+          <a class="sublink" href="https://drive.google.com/drive/folders/1J9dUikBIglojA4HnFrphd-ZHBxc3OWUr" target="_blank" rel="noopener"><span>درايف الجلسات المسجلة</span><span class="arrow">↖</span></a>
+          <div class="sublink-note">📣 تحديثات التدريب على Slack: <b>webinar-training-csm</b></div>
+        </div>
+      </div>
 
     </div>
   </section>
