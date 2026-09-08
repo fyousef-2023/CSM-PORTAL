@@ -185,12 +185,16 @@
   .row-label::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--accent,var(--teal));flex-shrink:0;}
   .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
   .grid-1{display:grid;grid-template-columns:minmax(240px,360px);gap:16px;}
+  @media (max-width:1100px){
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+  }
   @media (max-width:900px){
     .grid-3{grid-template-columns:repeat(2,1fr);}
   }
   @media (max-width:640px){
-    .grid-2,.grid-3,.grid-1{grid-template-columns:1fr;}
+    .grid-2,.grid-3,.grid-4,.grid-1{grid-template-columns:1fr;}
   }
 
   /* ===== Card ===== */
@@ -396,7 +400,7 @@
 
     <!-- الصف 4 -->
     <div class="row-group">
-      <div class="grid-3">
+      <div class="grid-4">
 
         <a class="card" href="https://fyousef-2023.github.io/Grubtech_CSM_Guide/" target="_blank" rel="noopener">
           <div class="card-top">
@@ -406,6 +410,16 @@
           <div class="card-title">دليل عملاء Grubtech<span class="en">Grubtech CSM Guide</span></div>
           <div class="card-desc">دليل التعامل مع عملاء Grubtech واحتياجاتهم الخاصة — كيف تخدمهم صح.</div>
           <div class="card-url">fyousef-2023.github.io/Grubtech_CSM_Guide</div>
+        </a>
+
+        <a class="card" href="https://fyousef-2023.github.io/RewaaPay/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">💳</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="card-title">رِواء باي<span class="en">RewaaPay</span></div>
+          <div class="card-desc">دليل التعامل مع خدمة الدفع رِواء باي — كيف تخدم عملاءها وتحل طلباتهم بشكل صحيح.</div>
+          <div class="card-url">fyousef-2023.github.io/RewaaPay</div>
         </a>
 
         <a class="card" href="https://docs.google.com/document/d/1KqWFCuq4a_yS1yQZZy956dPUiQ71gbqn816GaMN3Jdo/edit?tab=t.0#heading=h.2gt4uk9n01mo" target="_blank" rel="noopener">
