@@ -27,6 +27,11 @@
     --amber-tint:#FBF0DD;
     --amber-ink:#5C3B08;
 
+    --blue:#2F6FA6;
+    --blue-dark:#1F4F7A;
+    --blue-tint:#E4EEF7;
+    --blue-ink:#12324D;
+
     --shadow-sm:0 1px 2px rgba(19,34,38,.05);
     --shadow-md:0 10px 28px -14px rgba(19,34,38,.28);
     --radius:14px;
@@ -58,6 +63,11 @@
       --amber-tint:rgba(227,166,75,.14);
       --amber-ink:#F2C989;
 
+      --blue:#6FB3E0;
+      --blue-dark:#8FC8EA;
+      --blue-tint:rgba(111,179,224,.14);
+      --blue-ink:#B7DCF0;
+
       --shadow-sm:0 1px 2px rgba(0,0,0,.3);
       --shadow-md:0 14px 32px -16px rgba(0,0,0,.55);
     }
@@ -86,6 +96,11 @@
     --amber-dark:#F0BE71;
     --amber-tint:rgba(227,166,75,.14);
     --amber-ink:#F2C989;
+
+    --blue:#6FB3E0;
+    --blue-dark:#8FC8EA;
+    --blue-tint:rgba(111,179,224,.14);
+    --blue-ink:#B7DCF0;
 
     --shadow-sm:0 1px 2px rgba(0,0,0,.3);
     --shadow-md:0 14px 32px -16px rgba(0,0,0,.55);
@@ -261,6 +276,7 @@
   .empty span{font-size:13px;color:var(--text-muted);}
 
   /* section accent bindings */
+  #role{--accent:var(--blue);--accent-tint:var(--blue-tint);--accent-ink:var(--blue-ink);}
   #knowledge{--accent:var(--teal);--accent-tint:var(--teal-tint);--accent-ink:var(--teal-ink);}
   #tools{--accent:var(--purple);--accent-tint:var(--purple-tint);--accent-ink:var(--purple-ink);}
   #quality{--accent:var(--amber);--accent-tint:var(--amber-tint);--accent-ink:var(--amber-ink);}
@@ -290,6 +306,7 @@
         </div>
       </div>
       <nav class="quicknav">
+        <a href="#role">🪪 الدور والالتزامات</a>
         <a href="#knowledge">📚 المصادر المعرفية</a>
         <a href="#tools">🧰 البرامج والأدوات</a>
         <a href="#quality">✅ الالتزام والجودة</a>
@@ -303,6 +320,62 @@
     <p>بوابة داخلية تجمع مصادر المعرفة، والأنظمة والأدوات التشغيلية، وتعليمات الالتزام والجودة الخاصة بفريق نجاح العملاء — اضغط على أي بطاقة لفتح الصفحة أو الأداة مباشرة.</p>
   </div>
 
+  <!-- ============ Section 0: الدور والالتزامات ============ -->
+  <section class="section" id="role">
+    <div class="section-head">
+      <div class="section-icon">🪪</div>
+      <div class="section-titles">
+        <h2>الدور والالتزامات</h2>
+        <div class="en">Role &amp; Commitments</div>
+        <div class="section-desc">تعريف دور موظف نجاح العملاء، والمعايير الأساسية للالتزام المطلوبة في كل تواصل مع العميل.</div>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <a class="card" href="https://fyousef-2023.github.io/CSM-Role/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">👤</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">دور موظف نجاح العملاء<span class="en">CSM Role</span></div>
+        <div class="card-desc">تعريف شامل لدور موظف نجاح العملاء ومسؤولياته الأساسية ضمن رحلة العميل.</div>
+        <div class="card-url">fyousef-2023.github.io/CSM-Role</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/calendar/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">📅</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">الالتزام بالتقويم<span class="en">Calendar Compliance</span></div>
+        <div class="card-desc">معايير الالتزام بتحديث وإدارة تقويم المهام والمواعيد الخاصة بالعميل.</div>
+        <div class="card-url">fyousef-2023.github.io/calendar</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/documentation/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">📝</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">الالتزام بالتوثيق<span class="en">Documentation Compliance</span></div>
+        <div class="card-desc">معايير توثيق التواصل والإجراءات المتخذة مع العميل بشكل كامل ودقيق.</div>
+        <div class="card-url">fyousef-2023.github.io/documentation</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/Tagging/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🏷️</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">الالتزام بالتاج<span class="en">Tagging Compliance</span></div>
+        <div class="card-desc">معايير الالتزام بتصنيف (Tagging) الحالات والتواصل بالشكل الصحيح.</div>
+        <div class="card-url">fyousef-2023.github.io/Tagging</div>
+      </a>
+
+    </div>
+  </section>
+
   <!-- ============ Section 1: المصادر المعرفية ============ -->
   <section class="section" id="knowledge">
     <div class="section-head">
@@ -310,7 +383,7 @@
       <div class="section-titles">
         <h2>المصادر المعرفية</h2>
         <div class="en">Knowledge Resources</div>
-        <div class="section-desc">الأنظمة والصفحات المرجعية التي تشرح رحلة العميل ومراحلها — من التفعيل والإعداد إلى التصنيف والحالات.</div>
+        <div class="section-desc">الأنظمة والصفحات المرجعية يلي بتشرح رحلة العميل ومراحلها — من التفعيل والإعداد إلى التصنيف والحالات.</div>
       </div>
     </div>
 
@@ -573,16 +646,6 @@
         <div class="card-url">fyousef-2023.github.io/Compliance</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/CSM_Quality_Criteria_Interactive/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="card-icon">🎯</div>
-          <div class="card-go">افتح ↖</div>
-        </div>
-        <div class="card-title">معايير جودة التعامل مع العملاء<span class="en">CSM Quality Criteria</span></div>
-        <div class="card-desc">دليل تفاعلي لمعايير جودة التعامل مع العملاء المعتمدة في تقييم المكالمات والحالات.</div>
-        <div class="card-url">fyousef-2023.github.io/CSM_Quality_Criteria_Interactive</div>
-      </a>
-
       <a class="card" href="https://fyousef-2023.github.io/-CSM-Call-Checklist/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">✅</div>
@@ -591,6 +654,16 @@
         <div class="card-title">خطوات الالتزام أثناء المكالمة<span class="en">CSM Call Checklist</span></div>
         <div class="card-desc">أداة تفاعلية تغطي خطوات الالتزام لكل نوع مكالمة (تفعيل، إعادة تفعيل، NPS، Grubtech، تسليم الحساب، وغيرها) — تعليم كل بند أول بأول لضمان عدم تفويت أي خطوة.</div>
         <div class="card-url">fyousef-2023.github.io/-CSM-Call-Checklist</div>
+      </a>
+
+      <a class="card" href="https://fyousef-2023.github.io/CSM_Quality_Criteria_Interactive/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🎯</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">معايير جودة التعامل مع العملاء<span class="en">CSM Quality Criteria</span></div>
+        <div class="card-desc">دليل تفاعلي لمعايير جودة التعامل مع العملاء المعتمدة في تقييم المكالمات والحالات.</div>
+        <div class="card-url">fyousef-2023.github.io/CSM_Quality_Criteria_Interactive</div>
       </a>
 
     </div>
