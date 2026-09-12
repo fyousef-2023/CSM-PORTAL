@@ -237,6 +237,37 @@
     display:block;font-size:11.5px;font-weight:600;color:var(--text-faint);
     letter-spacing:.03em;margin-top:3px;direction:ltr;text-align:right;
   }
+
+  /* ===== Customer journey (visual divider, no cards) ===== */
+  .journey-flow{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:6px 0 24px;}
+  .journey-step{
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 28px;box-shadow:var(--shadow-sm);min-width:150px;
+  }
+  .journey-icon{font-size:24px;}
+  .journey-label{font-size:14px;font-weight:800;color:var(--text);text-align:center;}
+  .journey-label .en{
+    display:block;font-size:11px;font-weight:600;color:var(--text-faint);
+    letter-spacing:.03em;margin-top:3px;direction:ltr;
+  }
+  .journey-arrow{font-size:22px;color:var(--text-faint);}
+  .journey-loop{
+    display:flex;align-items:center;gap:8px;justify-content:center;text-align:center;
+    max-width:640px;margin:0 auto 14px;padding:11px 18px;border-radius:12px;
+    background:var(--surface-2);border:1px dashed var(--border);
+    font-size:12.5px;color:var(--text-muted);line-height:1.7;
+  }
+  .journey-note{
+    display:flex;align-items:center;gap:10px;justify-content:center;text-align:center;
+    max-width:720px;margin:0 auto;padding:14px 20px;border-radius:12px;
+    background:var(--amber-tint);border:1px solid var(--amber);
+    font-size:13px;color:var(--amber-ink);font-weight:600;line-height:1.7;
+  }
+  @media (max-width:640px){
+    .journey-flow{flex-direction:column;}
+    .journey-arrow{transform:rotate(90deg);}
+  }
   .card-desc{font-size:13px;color:var(--text-muted);line-height:1.75;flex:1;}
   .card-url{
     font-size:11px;color:var(--text-faint);direction:ltr;text-align:right;
@@ -315,6 +346,7 @@
       </div>
       <nav class="quicknav">
         <a href="#role">🪪 الدور والالتزامات</a>
+        <a href="#journey">🗺️ رحلة العميل</a>
         <a href="#knowledge">📚 المصادر المعرفية</a>
         <a href="#tools">🧰 البرامج والأدوات</a>
         <a href="#quality">✅ الالتزام والجودة</a>
@@ -356,8 +388,8 @@
           <div class="card-icon">📅</div>
           <div class="card-go">افتح ↖</div>
         </div>
-        <div class="card-title">الالتزام بالتقويم والتحديثات <span class="en">Calendar & Updates Compliance</span></div>
-        <div class="card-desc">معايير الالتزام بتنظيم التقويم اليومي ومتابعة القنوات الرسمية للتحديثات..</div>
+        <div class="card-title">الالتزام بالتقويم والتحديثات<span class="en">Calendar &amp; Updates Compliance</span></div>
+        <div class="card-desc">معايير الالتزام بتنظيم التقويم اليومي ومتابعة القنوات الرسمية للتحديثات.</div>
         <div class="card-url">fyousef-2023.github.io/calendar</div>
       </a>
 
@@ -394,6 +426,34 @@
     </div>
   </section>
 
+  <!-- ============ Section: رحلة العميل (visual divider) ============ -->
+  <section class="section" id="journey">
+    <div class="section-head">
+      <div class="section-icon">🗺️</div>
+      <div class="section-titles">
+        <h2>رحلة العميل</h2>
+        <div class="en">Customer Journey</div>
+        <div class="section-desc">قبل أي تواصل مع العميل، يجب تحديد المرحلة التي يمر بها ضمن رحلته معنا؛ إذ ينبغي إدارة كل حالة أو تذكرة ضمن سياق تلك المرحلة، لضمان تواصل متكامل ومترابط معه.</div>
+      </div>
+    </div>
+
+    <div class="journey-flow">
+      <div class="journey-step">
+        <div class="journey-icon">🚀</div>
+        <div class="journey-label">التفعيل<span class="en">Activation</span></div>
+      </div>
+      <div class="journey-arrow">←</div>
+      <div class="journey-step">
+        <div class="journey-icon">🌱</div>
+        <div class="journey-label">تبنّي المنتج<span class="en">Adoption</span></div>
+      </div>
+    </div>
+
+    <div class="journey-loop">🔁 في حال توقف العميل عن الاستخدام في أي من المرحلتين، فإنه يعود إلى المسار عبر مرحلة <b>إعادة التفعيل</b> ليكمل رحلته من جديد.</div>
+
+    <div class="journey-note">📌 قد تَرِد الحالات (Cases) في أي لحظة وضمن أي من هذه المراحل، ويجب إدارتها ضمن سياق المرحلة الحالية للعميل.</div>
+  </section>
+
   <!-- ============ Section 1: المصادر المعرفية ============ -->
   <section class="section" id="knowledge">
     <div class="section-head">
@@ -426,7 +486,7 @@
             <div class="card-go">افتح ↖</div>
           </div>
           <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
-          <div class="card-desc">خارطة تفاعلية لخطوات أتمتة تأهيل العميل الجديد (Onboarding) ونقاط التسليم بين الفرق المعنية.</div>
+          <div class="card-desc">خارطة تفاعلية توضح خطوات أتمتة تأهيل العميل الجديد (Onboarding).</div>
           <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
         </a>
 
@@ -462,7 +522,7 @@
             <div class="card-go">افتح ↖</div>
           </div>
           <div class="card-title">دليل إدارة الحالات<span class="en">Cases</span></div>
-          <div class="card-desc">دليل شامل لأنواع الحالات (Cases) وحالاتها المختلفة، وخطوات التعامل الصحيحة مع كل نوع.</div>
+          <div class="card-desc">دليل شامل للتذاكر والحالات (Cases) بمختلف أنواعها، وخطوات التعامل الصحيح مع كل نوع منها.</div>
           <div class="card-url">fyousef-2023.github.io/CasesV2</div>
         </a>
 
@@ -472,7 +532,7 @@
             <div class="card-go">افتح ↖</div>
           </div>
           <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
-          <div class="card-desc">خارطة تفاعلية لخطوات أتمتة تأهيل العميل الجديد (Onboarding) ونقاط التسليم بين الفرق المعنية.</div>
+          <div class="card-desc">خلال مرحلة الإعداد (Onboarding) تُفتح تاسكات تحتاج للمتابعة — هذا الدليل يوضح خطوات الأتمتة وطريقة التعامل الصحيحة مع هذه التاسكات.</div>
           <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
         </a>
 
@@ -481,8 +541,8 @@
             <div class="card-icon">🏛️</div>
             <div class="card-go">افتح ↖</div>
           </div>
-          <div class="card-title">منصة منشآت<span class="en">Monshaat</span></div>
-          <div class="card-desc">صفحة مرجعية لبرنامج منشآت وعلاقته بخدمات نجاح عملاء رِواء.</div>
+          <div class="card-title">حالات عملاء منشآت<span class="en">Monshaat Cases</span></div>
+          <div class="card-desc">مع عملاء منشآت تُفتح حالات (Cases) خاصة للتأكد من استلامهم الطلب — هذا الرابط يوضح طريقة التعامل الصحيحة مع هذه الحالات.</div>
           <div class="card-url">fyousef-2023.github.io/monshaat</div>
         </a>
 
