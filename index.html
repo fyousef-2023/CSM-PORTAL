@@ -265,6 +265,14 @@
     background:var(--surface-2);border:1px dashed var(--border);
     font-size:12px;color:var(--text-faint);
   }
+  .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .steps li{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:var(--text-muted);line-height:1.6;}
+  .steps .num{
+    flex-shrink:0;width:20px;height:20px;border-radius:50%;
+    background:var(--accent-tint,var(--teal-tint));color:var(--accent,var(--teal));
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;
+  }
 
   /* ===== Empty state ===== */
   .empty{
@@ -393,7 +401,7 @@
       <div class="section-titles">
         <h2>المصادر المعرفية</h2>
         <div class="en">Knowledge Resources</div>
-        <div class="section-desc">الأنظمة والصفحات المرجعية يلي بتشرح رحلة العميل ومراحلها — من التفعيل والإعداد إلى التصنيف والحالات.</div>
+        <div class="section-desc">الأنظمة والصفحات المرجعية التي تشرح رحلة العميل ومراحلها — من التفعيل والإعداد إلى التصنيف والحالات.</div>
       </div>
     </div>
 
@@ -622,14 +630,83 @@
       <div class="section-titles">
         <h2>البرامج والأدوات</h2>
         <div class="en">Programs &amp; Tools</div>
-        <div class="section-desc">الأنظمة والبرامج التشغيلية يلي يستخدمها موظف نجاح العملاء بشكل يومي.</div>
+        <div class="section-desc">الأنظمة والبرامج التشغيلية التي يستخدمها موظف نجاح العملاء بشكل يومي.</div>
       </div>
     </div>
 
-    <div class="empty">
-      <div class="empty-icon">🧰</div>
-      <b>القسم قيد الإعداد</b>
-      <span>جارٍ العمل حالياً على إضافة البرامج والأدوات الخاصة بهذا القسم.</span>
+    <div class="grid">
+
+      <a class="card" href="https://crm.zoho.com/crm/org709483323/tab/Accounts/custom-view/4412475000000087515/list" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🗂️</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">نظام إدارة علاقات العملاء<span class="en">CRM</span></div>
+        <div class="card-desc">يجمع نظام الـ CRM كل البيانات المتعلقة بالعميل ويربطها ويحلّلها — معلومات العميل، التفاعلات مع ممثلي الشركة، المشتريات، طلبات الخدمة، الأصول، والمقترحات/عروض الأسعار — ويتيح للمستخدمين فهم ما حدث في كل نقطة تواصل. هدفه الأساسي إدارة بيانات العملاء.</div>
+        <div class="card-url">crm.zoho.com/crm/org709483323/…</div>
+      </a>
+
+      <a class="card" href="https://bi-internal.platform.rewaatech.com/dashboard/9109-merchant-profile-dashboard?chart_time_grouping=&csm=&current_plan=&current_subscription_start_date=&first_subscription_start_date=2026-01-01~2026-03-31&health_status=&number_of_locations=&renewal_term=&schema_name=&sector=&subscription_end_date=&subscription_status=active&tab=2047-overview&zoho_account_id=" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">📊</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">قاعدة بيانات العملاء<span class="en">Metabase</span></div>
+        <div class="card-desc">قاعدة البيانات لكل معلومات عملائنا، وتنعكس بياناتها على حساب العميل في CRM. من خلالها يتابع كل موظف نجاح عملاء (مدير حساب) محفظة عملائه (BOB).</div>
+        <div class="card-url">bi-internal.platform.rewaatech.com/…</div>
+      </a>
+
+      <div class="card-group">
+        <div class="card-top">
+          <div class="card-icon">☎️</div>
+        </div>
+        <div class="card-title">Maqsam</div>
+        <div class="card-desc">برنامج الاتصال المعتمد — يجب البدء بالاتصال منه، ومحاولة الاتصال 3 مرات في حال عدم رد العميل قبل الانتقال لأي أداة اتصال أخرى، مع إضافة التاج المناسب على كل مكالمة.</div>
+        <div class="sublinks">
+          <a class="sublink" href="https://portal.maqsam.com/sign-in" target="_blank" rel="noopener"><span>رابط البرنامج</span><span class="arrow">↖</span></a>
+          <a class="sublink" href="https://fyousef-2023.github.io/Tag/" target="_blank" rel="noopener"><span>دليل التاج</span><span class="arrow">↖</span></a>
+        </div>
+      </div>
+
+      <a class="card" href="https://rewaa-tech.3cx.ae/#/people" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">📲</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">3CX</div>
+        <div class="card-desc">برنامج الاتصال الثاني — يُستخدم في حال عدم رد العميل على Maqsam بعد 3 محاولات، أو بناءً على توجيه من الإدارة.</div>
+        <div class="card-url">rewaa-tech.3cx.ae/#/people</div>
+      </a>
+
+      <a class="card" href="https://admin.platform.rewaatech.com/accounts/list" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon">🧾</div>
+          <div class="card-go">افتح ↖</div>
+        </div>
+        <div class="card-title">Admin Panel</div>
+        <div class="card-desc">لإصدار فواتير Upselling للعميل (مثل شراء أجهزة أو إضافة موقع)، أو للحصول على رابط الدخول لحساب العميل عند اللزوم.</div>
+        <div class="card-url">admin.platform.rewaatech.com/accounts/list</div>
+      </a>
+
+      <div class="card-group">
+        <div class="card-top">
+          <div class="card-icon">💡</div>
+        </div>
+        <div class="card-title">منصة الاقتراحات<span class="en">Frill</span></div>
+        <div class="card-desc">منصة يقترح من خلالها العملاء أفكارًا وتحسينات لمنصة رِواء، ويتابعون حالتها أولاً بأول.</div>
+        <ol class="steps">
+          <li><span class="num">1</span><span>يتم تسجيل الدخول للمنصة بنفس بيانات الدخول على منصة رِواء.</span></li>
+          <li><span class="num">2</span><span>تقديم الاقتراح: العميل يضيف اقتراحه ويتابع حالته مباشرة، أو الموظف يرفعه نيابةً عنه.</span></li>
+          <li><span class="num">3</span><span>التقييم: تُقيَّم الفكرة عبر قناة #new-ideas-frill المخصصة لتقييم أفكار العملاء.</span></li>
+          <li><span class="num">4</span><span>النشر والإشعار: بعد التقييم تُنشر الفكرة على Frill، ويصل للعميل رابطها تلقائيًا.</span></li>
+        </ol>
+        <div class="sublink-note">⚠️ لا تُقيَّم الفكرة أكثر من مرة — تقييمها مرتين يعني نشرها ووصول الرسالة للعميل مرتين.</div>
+        <div class="sublinks">
+          <a class="sublink" href="https://rewaa.frill.co/b/6vrw5e0l/feature-ideas" target="_blank" rel="noopener"><span>رابط المنصة</span><span class="arrow">↖</span></a>
+          <a class="sublink" href="https://rewaatech.slack.com/archives/C09L1GE1CL9" target="_blank" rel="noopener"><span>قناة تقييم الأفكار</span><span class="arrow">↖</span></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -640,7 +717,7 @@
       <div class="section-titles">
         <h2>تعليمات الالتزام والجودة</h2>
         <div class="en">Compliance &amp; Quality</div>
-        <div class="section-desc">السياسات والمعايير يلي بتضمن جودة التعامل مع العميل والتزام الفريق بمعايير رِواء.</div>
+        <div class="section-desc">السياسات والمعايير التي تضمن جودة التعامل مع العميل والتزام الفريق بمعايير رِواء.</div>
       </div>
     </div>
 
