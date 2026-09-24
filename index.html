@@ -304,6 +304,12 @@
     display:flex;align-items:center;justify-content:center;
     font-size:11px;font-weight:800;
   }
+  .bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;text-align:start;}
+  .bullets li{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:var(--text-muted);line-height:1.65;}
+  .bullets li::before{
+    content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;
+    background:var(--accent,var(--teal));
+  }
 
   /* ===== Incentive stat card ===== */
   .stat-card{
@@ -325,6 +331,7 @@
   .stat-card .card-title{font-size:15px;}
   .stat-card .card-desc{text-align:start;}
   .stat-card .card-url{text-align:center;}
+  .stat-card .sublink-note{text-align:start;}
   @keyframes statPulse{
     0%,100%{transform:scale(1);}
     50%{transform:scale(1.1);}
@@ -737,7 +744,13 @@
             <span class="stat-number">🎁</span>
           </div>
           <div class="card-title">كاش باك من رِواء<span class="en">Rewaa Cashback</span></div>
-          <div class="card-desc">برنامج تحفيزي متغيّر القيمة، تحدّد تفاصيله إدارة القسم بحسب الحملة المستهدفة (عملاء ربع سنة، أو شهر، أو فئة معينة)، بهدف تشجيع العميل على التفعيل والاستخدام الفعلي. فعند استيفاء العميل شروط التفعيل خلال المدة المحددة وإصدار فواتير فعلية، يحصل على كاش باك بمبلغ ثابت أو نسبة يُستخدم ضمن منصة رِواء، وقد يُمنح أيضاً كتعويض في حال تعرّضه لمشكلة تقنية طارئة أثّرت على استخدامه. تُحدَّث هذه التفاصيل أولاً بأول من القسم المختص، لذا يجب حضور الاجتماع اليومي، ومتابعة منشورات القناة المخصصة، والتنسيق مع المدير المباشر عند الحاجة.</div>
+          <div class="card-desc">برنامج تحفيزي متغيّر القيمة تحدّد تفاصيله إدارة القسم بحسب الحملة المستهدفة:</div>
+          <ul class="bullets">
+            <li>تستهدف الحملة فئة معينة من العملاء (ربع سنة، شهر، أو Cohort محدد) لتشجيعهم على التفعيل والاستخدام الفعلي.</li>
+            <li>عند استيفاء العميل شروط التفعيل خلال المدة المحددة وإصدار فواتير فعلية، يحصل على كاش باك بمبلغ ثابت أو نسبة يُستخدم ضمن منصة رِواء.</li>
+            <li>قد يُمنح الكاش باك أيضاً كتعويض للعميل في حال تعرّضه لمشكلة تقنية طارئة أثّرت على استخدامه.</li>
+          </ul>
+          <div class="sublink-note">📣 تُحدَّث التفاصيل أولاً بأول — احرص على حضور الاجتماع اليومي، ومتابعة القناة المخصصة، والتنسيق مع مديرك المباشر.</div>
         </div>
 
       </div>
