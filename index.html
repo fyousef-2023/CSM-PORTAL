@@ -305,6 +305,34 @@
     font-size:11px;font-weight:800;
   }
 
+  /* ===== Incentive stat card ===== */
+  .stat-card{
+    display:flex;flex-direction:column;gap:10px;text-align:center;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:22px 20px 20px;box-shadow:var(--shadow-sm);
+    transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  }
+  a.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent,var(--teal));}
+  .stat-card .card-top{justify-content:center;position:relative;}
+  .stat-card .card-go{position:absolute;inset-inline-end:0;top:2px;}
+  .stat-figure{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:4px 0 0;}
+  .stat-number{
+    font-family:'Cairo',sans-serif;font-size:38px;font-weight:800;line-height:1;
+    color:var(--accent,var(--teal));
+    animation:statPulse 2.6s ease-in-out infinite;
+  }
+  .stat-unit{font-size:14px;font-weight:700;color:var(--accent,var(--teal));}
+  .stat-card .card-title{font-size:15px;}
+  .stat-card .card-desc{text-align:start;}
+  .stat-card .card-url{text-align:center;}
+  @keyframes statPulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .stat-number{animation:none;}
+  }
+
   /* ===== Empty state ===== */
   .empty{
     border:1.5px dashed var(--border);border-radius:var(--radius);
@@ -664,6 +692,53 @@
           <div class="card-desc">مرجع الحالات والإجراءات الموحّدة — كيف تتعامل مع كل سيناريو بشكل صحيح. سيتم إطلاقها قريباً.</div>
           <div class="card-url">rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder</div>
         </a>
+
+      </div>
+    </div>
+
+    <!-- برامج الدعم والحوافز -->
+    <div class="row-group">
+      <div class="row-label">برامج الدعم والحوافز</div>
+      <div class="grid-3">
+
+        <a class="stat-card" href="https://fyousef-2023.github.io/Zatca/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🏛️</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="stat-figure">
+            <span class="stat-number">2,500</span>
+            <span class="stat-unit">ريال</span>
+          </div>
+          <div class="card-title">دعم الفوترة الإلكترونية<span class="en">E-Invoicing Support</span></div>
+          <div class="card-desc">دعم مقدّم من هيئة الزكاة والضريبة والجمارك بقيمة 2,500 ريال سعودي للعملاء المستوفين لشروط الفوترة الإلكترونية (ZATCA).</div>
+          <div class="card-url">fyousef-2023.github.io/Zatca</div>
+        </a>
+
+        <a class="stat-card" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🏢</div>
+            <div class="card-go">افتح ↖</div>
+          </div>
+          <div class="stat-figure">
+            <span class="stat-number">1,500</span>
+            <span class="stat-unit">ريال</span>
+          </div>
+          <div class="card-title">دعم مزايا (منشآت)<span class="en">Monsha'at Support</span></div>
+          <div class="card-desc">دعم مقدّم من الهيئة العامة للمنشآت الصغيرة والمتوسطة (منشآت) بقيمة 1,500 ريال سعودي على اشتراك منصة رِواء للعملاء المستوفين للشروط.</div>
+          <div class="card-url">fyousef-2023.github.io/monshaat</div>
+        </a>
+
+        <div class="stat-card">
+          <div class="card-top">
+            <div class="card-icon">🎁</div>
+          </div>
+          <div class="stat-figure">
+            <span class="stat-number">🎁</span>
+          </div>
+          <div class="card-title">كاش باك من رِواء<span class="en">Rewaa Cashback</span></div>
+          <div class="card-desc">برنامج تحفيزي متغيّر القيمة، تحدّد تفاصيله إدارة القسم بحسب الحملة المستهدفة (عملاء ربع سنة، أو شهر، أو فئة معينة)، بهدف تشجيع العميل على التفعيل والاستخدام الفعلي. فعند استيفاء العميل شروط التفعيل خلال المدة المحددة وإصدار فواتير فعلية، يحصل على كاش باك بمبلغ ثابت أو نسبة يُستخدم ضمن منصة رِواء، وقد يُمنح أيضاً كتعويض في حال تعرّضه لمشكلة تقنية طارئة أثّرت على استخدامه. تُحدَّث هذه التفاصيل أولاً بأول من القسم المختص، لذا يجب حضور الاجتماع اليومي، ومتابعة منشورات القناة المخصصة، والتنسيق مع المدير المباشر عند الحاجة.</div>
+        </div>
 
       </div>
     </div>
