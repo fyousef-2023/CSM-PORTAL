@@ -213,6 +213,19 @@
   }
 
   /* ===== Card ===== */
+  .card,.card-group,.stat-card{scroll-margin-top:96px;}
+  .card:target,.card-group:target,.stat-card:target{
+    border-color:var(--accent,var(--teal));
+    box-shadow:0 0 0 3px var(--accent-tint,var(--teal-tint)),var(--shadow-md);
+    animation:targetFlash 2.2s ease-out 1;
+  }
+  @keyframes targetFlash{
+    0%{background:var(--accent-tint,var(--teal-tint));}
+    100%{background:var(--surface);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .card:target,.card-group:target,.stat-card:target{animation:none;}
+  }
   .card{
     display:flex;flex-direction:column;gap:12px;
     background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
@@ -411,17 +424,17 @@
 
     <div class="grid">
 
-      <a class="card" href="https://docs.google.com/presentation/d/1hcDY607Lm0VdX_y7tPj7S0tHxXwb19MHWlWVnTvLm7I/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener">
+      <a class="card" id="rewaa-customer-success-and-communication-skills" href="https://docs.google.com/presentation/d/1hcDY607Lm0VdX_y7tPj7S0tHxXwb19MHWlWVnTvLm7I/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">🎓</div>
           <div class="card-go">افتح ↖</div>
         </div>
-        <div class="card-title">التدريب التعريفي لموظف نجاح العملاء<span class="en">CSM Onboarding Training</span></div>
+        <div class="card-title">العرض التعريفي: رِواء ونجاح العملاء ومهارات التواصل<span class="en">Rewaa, Customer Success &amp; Communication Skills</span></div>
         <div class="card-desc">عرض تقديمي شامل للتعريف بشركة رِواء وقيمها ومنتجاتها، إلى جانب مهارات التواصل الفعّال وإتيكيت المكالمات مع العميل — نقطة انطلاق مناسبة للموظف الجديد قبل استكمال بقية أقسام البوابة.</div>
         <div class="card-url">docs.google.com/presentation/d/1hcDY607…</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/CSM-Role/" target="_blank" rel="noopener">
+      <a class="card" id="csm-role" href="https://fyousef-2023.github.io/CSM-Role/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">👤</div>
           <div class="card-go">افتح ↖</div>
@@ -431,7 +444,7 @@
         <div class="card-url">fyousef-2023.github.io/CSM-Role</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/calendar/" target="_blank" rel="noopener">
+      <a class="card" id="daily-schedule-and-updates-compliance" href="https://fyousef-2023.github.io/calendar/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">📅</div>
           <div class="card-go">افتح ↖</div>
@@ -441,7 +454,7 @@
         <div class="card-url">fyousef-2023.github.io/calendar</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/documentation/" target="_blank" rel="noopener">
+      <a class="card" id="documentation-compliance" href="https://fyousef-2023.github.io/documentation/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">📝</div>
           <div class="card-go">افتح ↖</div>
@@ -451,7 +464,7 @@
         <div class="card-url">fyousef-2023.github.io/documentation</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/Tagging/" target="_blank" rel="noopener">
+      <a class="card" id="tagging-compliance" href="https://fyousef-2023.github.io/Tagging/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">🏷️</div>
           <div class="card-go">افتح ↖</div>
@@ -461,7 +474,7 @@
         <div class="card-url">fyousef-2023.github.io/Tagging</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/-CSM-Call-Checklist/" target="_blank" rel="noopener">
+      <a class="card" id="call-compliance" href="https://fyousef-2023.github.io/-CSM-Call-Checklist/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">📞</div>
           <div class="card-go">افتح ↖</div>
@@ -471,7 +484,7 @@
         <div class="card-url">fyousef-2023.github.io/-CSM-Call-Checklist</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/chat/" target="_blank" rel="noopener">
+      <a class="card" id="chat-response-and-handling-compliance" href="https://fyousef-2023.github.io/chat/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">💬</div>
           <div class="card-go">افتح ↖</div>
@@ -481,7 +494,7 @@
         <div class="card-url">fyousef-2023.github.io/chat</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/CaseFollow/" target="_blank" rel="noopener">
+      <a class="card" id="case-management-compliance" href="https://fyousef-2023.github.io/CaseFollow/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">🗂️</div>
           <div class="card-go">افتح ↖</div>
@@ -538,7 +551,7 @@
       <div class="row-label">التفعيل</div>
       <div class="grid-1">
 
-        <a class="card" href="https://fyousef-2023.github.io/CSM_Stages/" target="_blank" rel="noopener">
+        <a class="card" id="activation" href="https://fyousef-2023.github.io/CSM_Stages/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🚀</div>
             <div class="card-go">افتح ↖</div>
@@ -555,7 +568,7 @@
     <div class="row-group">
       <div class="grid-3">
 
-        <a class="card" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
+        <a class="card" id="onboarding-automation-journey" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">⚙️</div>
             <div class="card-go">افتح ↖</div>
@@ -565,7 +578,7 @@
           <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
         </a>
 
-        <a class="card" href="https://fyousef-2023.github.io/Product/" target="_blank" rel="noopener">
+        <a class="card" id="product-upload" href="https://fyousef-2023.github.io/Product/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">📤</div>
             <div class="card-go">افتح ↖</div>
@@ -575,7 +588,7 @@
           <div class="card-url">fyousef-2023.github.io/Product</div>
         </a>
 
-        <div class="card-group">
+        <div class="card-group" id="training">
           <div class="card-top">
             <div class="card-icon">🎓</div>
           </div>
@@ -587,7 +600,7 @@
           </div>
         </div>
 
-        <div class="card-group">
+        <div class="card-group" id="devices">
           <div class="card-top">
             <div class="card-icon">🖥️</div>
           </div>
@@ -605,7 +618,7 @@
           </div>
         </div>
 
-        <div class="card-group">
+        <div class="card-group" id="payments">
           <div class="card-top">
             <div class="card-icon">💳</div>
           </div>
@@ -617,7 +630,7 @@
           </div>
         </div>
 
-        <a class="card" href="https://fyousef-2023.github.io/Invoice/" target="_blank" rel="noopener">
+        <a class="card" id="subscription-invoice" href="https://fyousef-2023.github.io/Invoice/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🧾</div>
             <div class="card-go">افتح ↖</div>
@@ -627,7 +640,7 @@
           <div class="card-url">fyousef-2023.github.io/Invoice</div>
         </a>
 
-        <a class="card" href="https://fyousef-2023.github.io/Grubtech_CSM_Guide/" target="_blank" rel="noopener">
+        <a class="card" id="grubtech-csm-guide" href="https://fyousef-2023.github.io/Grubtech_CSM_Guide/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🍽️</div>
             <div class="card-go">افتح ↖</div>
@@ -637,7 +650,7 @@
           <div class="card-url">fyousef-2023.github.io/Grubtech_CSM_Guide</div>
         </a>
 
-        <a class="card" href="https://fyousef-2023.github.io/RewaaLink/" target="_blank" rel="noopener">
+        <a class="card" id="rewaa-link" href="https://fyousef-2023.github.io/RewaaLink/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🔗</div>
             <div class="card-go">افتح ↖</div>
@@ -655,7 +668,7 @@
       <div class="row-label">الباقات</div>
       <div class="grid-1">
 
-        <div class="card-group">
+        <div class="card-group" id="packages">
           <div class="card-top">
             <div class="card-icon">📦</div>
           </div>
@@ -677,7 +690,7 @@
       <div class="row-label">إعادة التفعيل</div>
       <div class="grid-1">
 
-        <a class="card" href="https://fyousef-2023.github.io/Reactivation/" target="_blank" rel="noopener">
+        <a class="card" id="customer-reactivation" href="https://fyousef-2023.github.io/Reactivation/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🔁</div>
             <div class="card-go">افتح ↖</div>
@@ -695,7 +708,7 @@
       <div class="row-label">إدارة الحالات</div>
       <div class="grid-3">
 
-        <a class="card" href="https://fyousef-2023.github.io/CasesV2/" target="_blank" rel="noopener">
+        <a class="card" id="cases" href="https://fyousef-2023.github.io/CasesV2/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🗂️</div>
             <div class="card-go">افتح ↖</div>
@@ -705,7 +718,7 @@
           <div class="card-url">fyousef-2023.github.io/CasesV2</div>
         </a>
 
-        <a class="card" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
+        <a class="card" id="onboarding-automation-journey-2" href="https://fyousef-2023.github.io/Onboarding-Automation/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">⚙️</div>
             <div class="card-go">افتح ↖</div>
@@ -715,7 +728,7 @@
           <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
         </a>
 
-        <a class="card" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
+        <a class="card" id="monshaat-cases" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🏛️</div>
             <div class="card-go">افتح ↖</div>
@@ -725,7 +738,7 @@
           <div class="card-url">fyousef-2023.github.io/monshaat</div>
         </a>
 
-        <a class="card" href="https://docs.google.com/document/d/179YX3rN7KgJqCphXfyGv_W7XlpwNbHd0c-VZ1W4UF4A/edit?tab=t.0#heading=h.9khn88j15wtv" target="_blank" rel="noopener">
+        <a class="card" id="nps-case-handling-guide" href="https://docs.google.com/document/d/179YX3rN7KgJqCphXfyGv_W7XlpwNbHd0c-VZ1W4UF4A/edit?tab=t.0#heading=h.9khn88j15wtv" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🌟</div>
             <div class="card-go">افتح ↖</div>
@@ -743,7 +756,7 @@
       <div class="row-label">قريبًا</div>
       <div class="grid-1">
 
-        <a class="card" href="https://rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder/" target="_blank" rel="noopener">
+        <a class="card" id="standard-operating-procedures" href="https://rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">📋</div>
             <div class="card-go">افتح ↖</div>
@@ -761,7 +774,7 @@
       <div class="row-label">برامج الدعم والحوافز</div>
       <div class="grid-3">
 
-        <a class="stat-card" href="https://fyousef-2023.github.io/Zatca/" target="_blank" rel="noopener">
+        <a class="stat-card" id="e-invoicing-support" href="https://fyousef-2023.github.io/Zatca/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🏛️</div>
             <div class="card-go">افتح ↖</div>
@@ -775,7 +788,7 @@
           <div class="card-url">fyousef-2023.github.io/Zatca</div>
         </a>
 
-        <a class="stat-card" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
+        <a class="stat-card" id="monsha-at-support" href="https://fyousef-2023.github.io/monshaat/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🏢</div>
             <div class="card-go">افتح ↖</div>
@@ -789,7 +802,7 @@
           <div class="card-url">fyousef-2023.github.io/monshaat</div>
         </a>
 
-        <a class="stat-card" href="https://fyousef-2023.github.io/Cashback/" target="_blank" rel="noopener">
+        <a class="stat-card" id="rewaa-cashback" href="https://fyousef-2023.github.io/Cashback/" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🎁</div>
             <div class="card-go">افتح ↖</div>
@@ -817,7 +830,7 @@
       <div class="row-label">بقية المصادر المعرفية</div>
       <div class="grid">
 
-        <a class="card" href="https://scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg/page/mqdmh_wtahyl_lmnsh_rwaa__Kmel96usRmG1o_ezZuopJQ" target="_blank" rel="noopener">
+        <a class="card" id="rewaa-platform-introduction" href="https://scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg/page/mqdmh_wtahyl_lmnsh_rwaa__Kmel96usRmG1o_ezZuopJQ" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🏢</div>
             <div class="card-go">افتح ↖</div>
@@ -827,7 +840,7 @@
           <div class="card-url">scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg…</div>
         </a>
 
-        <a class="card" href="https://help.rewaa.com/ar-SA" target="_blank" rel="noopener">
+        <a class="card" id="rewaa-help-center" href="https://help.rewaa.com/ar-SA" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">🛟</div>
             <div class="card-go">افتح ↖</div>
@@ -837,7 +850,7 @@
           <div class="card-url">help.rewaa.com/ar-SA</div>
         </a>
 
-        <a class="card" href="https://www.youtube.com/@RewaaTechnology/playlists" target="_blank" rel="noopener">
+        <a class="card" id="rewaa-youtube-channel" href="https://www.youtube.com/@RewaaTechnology/playlists" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">▶️</div>
             <div class="card-go">افتح ↖</div>
@@ -847,7 +860,7 @@
           <div class="card-url">youtube.com/@RewaaTechnology/playlists</div>
         </a>
 
-        <a class="card" href="https://docs.google.com/spreadsheets/d/1rnUH9_MxW3TWzqNzVJdiSH9AE3U1gHnpN2uBnJBQFGA/edit?gid=0#gid=0" target="_blank" rel="noopener">
+        <a class="card" id="open-cx-quick-replies" href="https://docs.google.com/spreadsheets/d/1rnUH9_MxW3TWzqNzVJdiSH9AE3U1gHnpN2uBnJBQFGA/edit?gid=0#gid=0" target="_blank" rel="noopener">
           <div class="card-top">
             <div class="card-icon">💬</div>
             <div class="card-go">افتح ↖</div>
@@ -874,7 +887,7 @@
 
     <div class="grid">
 
-      <div class="card-group">
+      <div class="card-group" id="open-cx">
         <div class="card-top">
           <div class="card-icon">📥</div>
         </div>
@@ -886,7 +899,7 @@
         </div>
       </div>
 
-      <a class="card" href="https://crm.zoho.com/crm/org709483323/tab/Accounts/custom-view/4412475000000087515/list" target="_blank" rel="noopener">
+      <a class="card" id="crm" href="https://crm.zoho.com/crm/org709483323/tab/Accounts/custom-view/4412475000000087515/list" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">🗂️</div>
           <div class="card-go">افتح ↖</div>
@@ -896,7 +909,7 @@
         <div class="card-url">crm.zoho.com/crm/org709483323/…</div>
       </a>
 
-      <a class="card" href="https://bi-internal.platform.rewaatech.com/dashboard/9109-merchant-profile-dashboard?chart_time_grouping=&csm=&current_plan=&current_subscription_start_date=&first_subscription_start_date=2026-01-01~2026-03-31&health_status=&number_of_locations=&renewal_term=&schema_name=&sector=&subscription_end_date=&subscription_status=active&tab=2047-overview&zoho_account_id=" target="_blank" rel="noopener">
+      <a class="card" id="metabase" href="https://bi-internal.platform.rewaatech.com/dashboard/9109-merchant-profile-dashboard?chart_time_grouping=&csm=&current_plan=&current_subscription_start_date=&first_subscription_start_date=2026-01-01~2026-03-31&health_status=&number_of_locations=&renewal_term=&schema_name=&sector=&subscription_end_date=&subscription_status=active&tab=2047-overview&zoho_account_id=" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">📊</div>
           <div class="card-go">افتح ↖</div>
@@ -906,7 +919,7 @@
         <div class="card-url">bi-internal.platform.rewaatech.com/…</div>
       </a>
 
-      <div class="card-group">
+      <div class="card-group" id="maqsam">
         <div class="card-top">
           <div class="card-icon">☎️</div>
         </div>
@@ -918,7 +931,7 @@
         </div>
       </div>
 
-      <a class="card" href="https://rewaa-tech.3cx.ae/#/people" target="_blank" rel="noopener">
+      <a class="card" id="3cx" href="https://rewaa-tech.3cx.ae/#/people" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">📲</div>
           <div class="card-go">افتح ↖</div>
@@ -928,7 +941,7 @@
         <div class="card-url">rewaa-tech.3cx.ae/#/people</div>
       </a>
 
-      <a class="card" href="https://admin.platform.rewaatech.com/accounts/list" target="_blank" rel="noopener">
+      <a class="card" id="admin-panel" href="https://admin.platform.rewaatech.com/accounts/list" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">🧾</div>
           <div class="card-go">افتح ↖</div>
@@ -938,7 +951,7 @@
         <div class="card-url">admin.platform.rewaatech.com/accounts/list</div>
       </a>
 
-      <div class="card-group">
+      <div class="card-group" id="frill">
         <div class="card-top">
           <div class="card-icon">💡</div>
         </div>
@@ -957,7 +970,7 @@
         </div>
       </div>
 
-      <div class="card-group">
+      <div class="card-group" id="related-slack-channels">
         <div class="card-top">
           <div class="card-icon">
             <svg width="20" height="20" viewBox="0 0 127 127" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1006,7 +1019,7 @@
 
     <div class="grid">
 
-      <a class="card" href="#role">
+      <a class="card" id="role-and-commitments" href="#role">
         <div class="card-top">
           <div class="card-icon">🪪</div>
           <div class="card-go">عرض القسم ↑</div>
@@ -1016,7 +1029,7 @@
         <div class="card-url">أعلى الصفحة</div>
       </a>
 
-      <a class="card" href="https://fyousef-2023.github.io/CSM_Quality_Criteria_Interactive/" target="_blank" rel="noopener">
+      <a class="card" id="csm-quality-criteria" href="https://fyousef-2023.github.io/CSM_Quality_Criteria_Interactive/" target="_blank" rel="noopener">
         <div class="card-top">
           <div class="card-icon">🎯</div>
           <div class="card-go">افتح ↖</div>
