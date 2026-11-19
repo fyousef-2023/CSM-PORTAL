@@ -424,6 +424,13 @@
     border-inline-start:2px solid var(--border-soft);
   }
   .side-nav-item:hover{background:var(--surface-2);color:var(--teal-dark);border-inline-start-color:var(--teal);}
+  .side-nav-subsec{
+    display:block;padding:6px 8px;margin:4px 0 2px;border-radius:7px;
+    font:700 12px 'Cairo',sans-serif;color:var(--teal-dark);text-decoration:none;
+    background:var(--surface-2);
+  }
+  .side-nav-subsec:hover{background:var(--teal-tint);}
+  .row-group{scroll-margin-top:96px;}
 
   @media (max-width:640px){
     .hero h1{font-size:26px;}
@@ -472,7 +479,7 @@
       </div>
       <div class="side-nav-group">
         <a class="side-nav-sec" href="#knowledge"><span>📚</span><span>المصادر المعرفية</span></a>
-        <a class="side-nav-item" href="#activation">مراحل التفعيل</a>
+        <a class="side-nav-subsec" href="#activation">التفعيل</a>
         <a class="side-nav-item" href="#onboarding-automation-journey">رحلة أتمتة الإعداد</a>
         <a class="side-nav-item" href="#product-upload">رفع المنتجات</a>
         <a class="side-nav-item" href="#training">التدريب</a>
@@ -481,16 +488,19 @@
         <a class="side-nav-item" href="#subscription-invoice">فاتورة الاشتراك</a>
         <a class="side-nav-item" href="#grubtech-csm-guide">دليل عملاء Grubtech</a>
         <a class="side-nav-item" href="#rewaa-link">رواء لينك</a>
-        <a class="side-nav-item" href="#packages">الباقات</a>
-        <a class="side-nav-item" href="#customer-reactivation">إعادة التفعيل</a>
+        <a class="side-nav-subsec" href="#packages">الباقات</a>
+        <a class="side-nav-subsec" href="#customer-reactivation">إعادة التفعيل</a>
+        <a class="side-nav-subsec" href="#case-management">إدارة الحالات</a>
         <a class="side-nav-item" href="#cases">دليل إدارة الحالات</a>
         <a class="side-nav-item" href="#onboarding-automation-journey-2">رحلة أتمتة الإعداد</a>
         <a class="side-nav-item" href="#monshaat-cases">حالات عملاء منشآت</a>
         <a class="side-nav-item" href="#nps-case-handling-guide">دليل التعامل مع حالات NPS</a>
-        <a class="side-nav-item" href="#standard-operating-procedures">SOP — إجراءات العمل الموحّدة</a>
+        <a class="side-nav-subsec" href="#standard-operating-procedures">قريبًا</a>
+        <a class="side-nav-subsec" href="#incentive-programs">برامج الدعم والحوافز</a>
         <a class="side-nav-item" href="#e-invoicing-support">دعم الفوترة الإلكترونية</a>
         <a class="side-nav-item" href="#monsha-at-support">دعم مزايا (منشآت)</a>
         <a class="side-nav-item" href="#rewaa-cashback">كاش باك من رِواء</a>
+        <a class="side-nav-subsec" href="#other-knowledge-resources">بقية المصادر المعرفية</a>
         <a class="side-nav-item" href="#rewaa-platform-introduction">مقدمة وتأهيل منصة رِواء</a>
         <a class="side-nav-item" href="#rewaa-help-center">مركز المساعدة</a>
         <a class="side-nav-item" href="#rewaa-youtube-channel">قناة رِواء على يوتيوب</a>
@@ -506,7 +516,8 @@
         <a class="side-nav-item" href="#admin-panel">Admin Panel</a>
         <a class="side-nav-item" href="#frill">منصة الاقتراحات</a>
         <a class="side-nav-item" href="#related-slack-channels">قنوات Slack ذات الصلة</a>
-        <a class="side-nav-item" href="#platform-apps-links">روابط المنصة والتطبيقات</a>
+        <a class="side-nav-subsec" href="#platform-apps-links">روابط المنصة والتطبيقات</a>
+        <a class="side-nav-subsec" href="#helper-tools">برامج وأدوات مساعدة</a>
         <a class="side-nav-item" href="#remote-access-tools">برامج الربط عن بُعد</a>
         <a class="side-nav-item" href="#screen-recording-tools">برامج التصوير</a>
       </div>
@@ -817,7 +828,7 @@
     </div>
 
     <!-- الصف 3 — إدارة الحالات -->
-    <div class="row-group">
+    <div class="row-group" id="case-management">
       <div class="row-label">إدارة الحالات</div>
       <div class="grid-3">
 
@@ -883,7 +894,7 @@
     </div>
 
     <!-- برامج الدعم والحوافز -->
-    <div class="row-group">
+    <div class="row-group" id="incentive-programs">
       <div class="row-label">برامج الدعم والحوافز</div>
       <div class="grid-3">
 
@@ -939,7 +950,7 @@
     </div>
 
     <!-- الصف 5 — بقية المصادر المعرفية -->
-    <div class="row-group">
+    <div class="row-group" id="other-knowledge-resources">
       <div class="row-label">بقية المصادر المعرفية</div>
       <div class="grid">
 
@@ -1148,7 +1159,7 @@
     </div>
 
     <!-- برامج وأدوات مساعدة -->
-    <div class="row-group">
+    <div class="row-group" id="helper-tools">
       <div class="row-label">برامج وأدوات مساعدة</div>
       <div class="grid-2">
 
