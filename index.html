@@ -248,7 +248,7 @@
   }
   .card-link-btn:hover{background:var(--accent-tint,var(--teal-tint));color:var(--accent,var(--teal));border-color:var(--accent,var(--teal));}
   .card-link-btn.copied{color:var(--accent,var(--teal));border-color:var(--accent,var(--teal));}
-  .stat-card .card-link-btn{position:absolute;inset-inline-start:0;top:2px;}
+  .stat-card .card-link-btn{position:absolute;inset-inline-end:0;top:2px;}
   .card-go{
     font-size:12px;font-weight:700;color:var(--accent,var(--teal));
     opacity:0;transform:translateX(4px);transition:.16s ease;
@@ -345,9 +345,10 @@
     transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   }
   a.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent,var(--teal));}
+  a.stat-card:hover .card-go{opacity:1;transform:translateX(0);}
   .stat-card .card-top{justify-content:center;position:relative;}
   .stat-card .card-icon{margin-inline-end:0;}
-  .stat-card .card-go{position:absolute;inset-inline-end:0;top:2px;}
+  .stat-card .card-go{position:absolute;inset-inline-end:32px;top:2px;}
   .stat-figure{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:4px 0 0;}
   .stat-number{
     font-family:'Cairo',sans-serif;font-size:38px;font-weight:800;line-height:1;
