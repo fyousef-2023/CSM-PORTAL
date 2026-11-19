@@ -390,9 +390,45 @@
   }
   footer span{font-size:12px;color:var(--text-faint);}
 
+  /* ===== Side index nav ===== */
+  .side-nav{
+    position:fixed;top:50%;right:0;transform:translateY(-50%);
+    z-index:600;display:flex;align-items:stretch;
+  }
+  .side-nav-tab{
+    width:40px;height:72px;flex-shrink:0;border:none;cursor:pointer;
+    background:var(--surface);border:1px solid var(--border);border-inline-end:none;
+    border-radius:10px 0 0 10px;box-shadow:var(--shadow-sm);
+    display:flex;align-items:center;justify-content:center;
+    font-size:19px;color:var(--teal-dark);transition:background .15s ease;
+  }
+  .side-nav-tab:hover{background:var(--teal-tint);}
+  .side-nav-panel{
+    width:300px;max-height:76vh;overflow-y:auto;flex-shrink:0;
+    background:var(--surface);border:1px solid var(--border);border-radius:12px 0 0 12px;
+    box-shadow:var(--shadow-md);padding:10px;
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .15s ease;
+  }
+  .side-nav.open .side-nav-panel{opacity:1;visibility:visible;pointer-events:auto;}
+  .side-nav-group{margin-bottom:10px;}
+  .side-nav-sec{
+    display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:8px;
+    font:700 13px 'Cairo',sans-serif;color:var(--teal-ink);background:var(--teal-tint);
+    text-decoration:none;margin-bottom:4px;
+  }
+  .side-nav-sec:hover{background:var(--teal);color:#fff;}
+  .side-nav-item{
+    display:block;padding:6px 10px;margin-inline-start:14px;border-radius:7px;
+    font-size:12.5px;color:var(--text-muted);text-decoration:none;line-height:1.4;
+    border-inline-start:2px solid var(--border-soft);
+  }
+  .side-nav-item:hover{background:var(--surface-2);color:var(--teal-dark);border-inline-start-color:var(--teal);}
+
   @media (max-width:640px){
     .hero h1{font-size:26px;}
     .section-head{flex-direction:column;gap:10px;padding-inline-start:14px;}
+    .side-nav-panel{width:min(78vw,300px);}
   }
 </style>
 
@@ -415,6 +451,71 @@
         <a href="#quality">✅ الالتزام والجودة</a>
       </nav>
     </div>
+  </div>
+
+  <div class="side-nav" id="sideNav">
+    <button type="button" class="side-nav-tab" id="sideNavTab" aria-expanded="false" aria-controls="sideNavPanel" aria-label="فهرس الأقسام والبطاقات" title="فهرس الأقسام والبطاقات">📑</button>
+    <nav class="side-nav-panel" id="sideNavPanel" aria-label="فهرس الأقسام والبطاقات">
+      <div class="side-nav-group">
+        <a class="side-nav-sec" href="#role"><span>🪪</span><span>الدور والالتزامات</span></a>
+        <a class="side-nav-item" href="#rewaa-customer-success-and-communication-skills">العرض التعريفي: رِواء ونجاح العملاء ومهارات التواصل</a>
+        <a class="side-nav-item" href="#csm-role">دور موظف نجاح العملاء</a>
+        <a class="side-nav-item" href="#daily-schedule-and-updates-compliance">الالتزام بالجدول اليومي والتحديثات</a>
+        <a class="side-nav-item" href="#documentation-compliance">الالتزام بالتوثيق</a>
+        <a class="side-nav-item" href="#tagging-compliance">الالتزام بالتاج</a>
+        <a class="side-nav-item" href="#call-compliance">الالتزام بالمكالمة</a>
+        <a class="side-nav-item" href="#chat-response-and-handling-compliance">الالتزام بالرد والتعامل مع المحادثات</a>
+        <a class="side-nav-item" href="#case-management-compliance">الالتزام بإدارة الحالات</a>
+      </div>
+      <div class="side-nav-group">
+        <a class="side-nav-sec" href="#journey"><span>🗺️</span><span>رحلة العميل</span></a>
+      </div>
+      <div class="side-nav-group">
+        <a class="side-nav-sec" href="#knowledge"><span>📚</span><span>المصادر المعرفية</span></a>
+        <a class="side-nav-item" href="#activation">مراحل التفعيل</a>
+        <a class="side-nav-item" href="#onboarding-automation-journey">رحلة أتمتة الإعداد</a>
+        <a class="side-nav-item" href="#product-upload">رفع المنتجات</a>
+        <a class="side-nav-item" href="#training">التدريب</a>
+        <a class="side-nav-item" href="#devices">الأجهزة</a>
+        <a class="side-nav-item" href="#payments">المدفوعات</a>
+        <a class="side-nav-item" href="#subscription-invoice">فاتورة الاشتراك</a>
+        <a class="side-nav-item" href="#grubtech-csm-guide">دليل عملاء Grubtech</a>
+        <a class="side-nav-item" href="#rewaa-link">رواء لينك</a>
+        <a class="side-nav-item" href="#packages">الباقات</a>
+        <a class="side-nav-item" href="#customer-reactivation">إعادة التفعيل</a>
+        <a class="side-nav-item" href="#cases">دليل إدارة الحالات</a>
+        <a class="side-nav-item" href="#onboarding-automation-journey-2">رحلة أتمتة الإعداد</a>
+        <a class="side-nav-item" href="#monshaat-cases">حالات عملاء منشآت</a>
+        <a class="side-nav-item" href="#nps-case-handling-guide">دليل التعامل مع حالات NPS</a>
+        <a class="side-nav-item" href="#standard-operating-procedures">SOP — إجراءات العمل الموحّدة</a>
+        <a class="side-nav-item" href="#e-invoicing-support">دعم الفوترة الإلكترونية</a>
+        <a class="side-nav-item" href="#monsha-at-support">دعم مزايا (منشآت)</a>
+        <a class="side-nav-item" href="#rewaa-cashback">كاش باك من رِواء</a>
+        <a class="side-nav-item" href="#rewaa-platform-introduction">مقدمة وتأهيل منصة رِواء</a>
+        <a class="side-nav-item" href="#rewaa-help-center">مركز المساعدة</a>
+        <a class="side-nav-item" href="#rewaa-youtube-channel">قناة رِواء على يوتيوب</a>
+        <a class="side-nav-item" href="#open-cx-quick-replies">دليل الردود السريعة</a>
+      </div>
+      <div class="side-nav-group">
+        <a class="side-nav-sec" href="#tools"><span>🧰</span><span>البرامج والأدوات</span></a>
+        <a class="side-nav-item" href="#open-cx">Open CX</a>
+        <a class="side-nav-item" href="#crm">نظام إدارة علاقات العملاء</a>
+        <a class="side-nav-item" href="#metabase">قاعدة بيانات العملاء</a>
+        <a class="side-nav-item" href="#maqsam">Maqsam</a>
+        <a class="side-nav-item" href="#3cx">3CX</a>
+        <a class="side-nav-item" href="#admin-panel">Admin Panel</a>
+        <a class="side-nav-item" href="#frill">منصة الاقتراحات</a>
+        <a class="side-nav-item" href="#related-slack-channels">قنوات Slack ذات الصلة</a>
+        <a class="side-nav-item" href="#platform-apps-links">روابط المنصة والتطبيقات</a>
+        <a class="side-nav-item" href="#remote-access-tools">برامج الربط عن بُعد</a>
+        <a class="side-nav-item" href="#screen-recording-tools">برامج التصوير</a>
+      </div>
+      <div class="side-nav-group">
+        <a class="side-nav-sec" href="#quality"><span>✅</span><span>الالتزام والجودة</span></a>
+        <a class="side-nav-item" href="#role-and-commitments">الدور والالتزامات</a>
+        <a class="side-nav-item" href="#csm-quality-criteria">معايير جودة التعامل مع العملاء</a>
+      </div>
+    </nav>
   </div>
 
   <div class="hero">
@@ -1016,6 +1117,68 @@
       </div>
 
     </div>
+
+    <!-- روابط المنصة والتطبيقات -->
+    <div class="row-group">
+      <div class="row-label">روابط المنصة والتطبيقات</div>
+      <div class="grid-1">
+
+        <div class="card-group" id="platform-apps-links">
+          <div class="card-top">
+            <div class="card-icon">🔗</div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'platform-apps-links')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
+          <div class="card-title">روابط المنصة والتطبيقات<span class="en">Platform &amp; Apps Links</span></div>
+          <div class="card-desc">روابط منصة رِواء وتطبيقاتها على الأجهزة المحمولة.</div>
+          <div class="sublinks">
+            <div class="sublink-group">
+              <a class="sublink" href="https://platform.rewaatech.com/" target="_blank" rel="noopener"><span>منصة رِواء</span><span class="arrow">↖</span></a>
+              <div class="sublink-desc">منصة سحابية تفتح من أي متصفح.</div>
+            </div>
+            <div class="sublink-group">
+              <a class="sublink" href="https://play.google.com/store/apps/details?id=rewaa.tech.pos.android&amp;hl=en_US" target="_blank" rel="noopener"><span>تطبيق رِواء كاشير</span><span class="arrow">↖</span></a>
+              <div class="sublink-desc">متوفر على أندرويد فقط.</div>
+            </div>
+            <a class="sublink" href="https://play.google.com/store/apps/details?id=com.rewaa.pulse&amp;hl=Ar&amp;pli=1" target="_blank" rel="noopener"><span>تطبيق مساعد رِواء الذكي (التاجر) — أندرويد</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://apps.apple.com/us/app/%D9%85%D8%B3%D8%A7%D8%B9%D8%AF-%D8%B1-%D9%88%D8%A7%D8%A1-%D8%A7%D9%84%D8%B0%D9%83%D9%8A/id6743364464?l=ar" target="_blank" rel="noopener"><span>تطبيق مساعد رِواء الذكي (التاجر) — iOS</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://play.google.com/store/apps/details?id=io.nearpay.softpos.eighteen&amp;hl=en_US" target="_blank" rel="noopener"><span>تطبيق رِواء باي</span><span class="arrow">↖</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- برامج وأدوات مساعدة -->
+    <div class="row-group">
+      <div class="row-label">برامج وأدوات مساعدة</div>
+      <div class="grid-2">
+
+        <div class="card-group" id="remote-access-tools">
+          <div class="card-top">
+            <div class="card-icon">🖥️</div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'remote-access-tools')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
+          <div class="card-title">برامج الربط عن بُعد<span class="en">Remote Access Tools</span></div>
+          <div class="card-desc">للربط عن بُعد على جهاز العميل وخدمته بما يحتاج.</div>
+          <div class="sublinks">
+            <a class="sublink" href="https://anydesk.com" target="_blank" rel="noopener"><span>AnyDesk</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://rustdesk.com" target="_blank" rel="noopener"><span>RustDesk</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://www.ultraviewer.net" target="_blank" rel="noopener"><span>UltraViewer</span><span class="arrow">↖</span></a>
+          </div>
+        </div>
+
+        <div class="card-group" id="screen-recording-tools">
+          <div class="card-top">
+            <div class="card-icon">🎥</div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'screen-recording-tools')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
+          <div class="card-title">برامج التصوير<span class="en">Screen Recording Tools</span></div>
+          <div class="card-desc">لتسجيل الفيديوهات والشروحات.</div>
+          <div class="sublinks">
+            <a class="sublink" href="https://www.loom.com" target="_blank" rel="noopener"><span>Loom</span><span class="arrow">↖</span></a>
+            <a class="sublink" href="https://www.awesomescreenshot.com/" target="_blank" rel="noopener"><span>Awesome Screen Recorder</span><span class="arrow">↖</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- ============ Section 3: الالتزام والجودة ============ -->
@@ -1102,6 +1265,30 @@ function copyCardLink(ev, id){
   }
   return false;
 }
+
+(function(){
+  var nav = document.getElementById('sideNav');
+  var tab = document.getElementById('sideNavTab');
+  if(!nav || !tab) return;
+  var pinned = false;
+  function openNav(){ nav.classList.add('open'); tab.setAttribute('aria-expanded','true'); }
+  function closeNav(){ nav.classList.remove('open'); tab.setAttribute('aria-expanded','false'); }
+  nav.addEventListener('mouseenter', openNav);
+  nav.addEventListener('mouseleave', function(){ if(!pinned) closeNav(); });
+  tab.addEventListener('click', function(){
+    pinned = !pinned;
+    if(pinned){ openNav(); } else { closeNav(); }
+  });
+  nav.addEventListener('click', function(ev){
+    if(ev.target.closest('.side-nav-sec, .side-nav-item')){
+      pinned = false;
+      closeNav();
+    }
+  });
+  document.addEventListener('keydown', function(ev){
+    if(ev.key === 'Escape'){ pinned = false; closeNav(); }
+  });
+})();
 </script>
 
 </body>
