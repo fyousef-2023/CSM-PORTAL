@@ -233,12 +233,22 @@
     transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   }
   .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent,var(--teal));}
-  .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .card-top{display:flex;align-items:center;gap:10px;}
   .card-icon{
     width:38px;height:38px;border-radius:10px;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;font-size:17px;
     background:var(--accent-tint,var(--teal-tint));color:var(--accent-ink,var(--teal-ink));
+    margin-inline-end:auto;
   }
+  .card-link-btn{
+    flex-shrink:0;width:26px;height:26px;padding:0;border-radius:8px;
+    display:inline-flex;align-items:center;justify-content:center;font-size:12px;line-height:1;
+    background:var(--surface-2);border:1px solid var(--border-soft);color:var(--text-faint);
+    cursor:pointer;transition:.15s ease;
+  }
+  .card-link-btn:hover{background:var(--accent-tint,var(--teal-tint));color:var(--accent,var(--teal));border-color:var(--accent,var(--teal));}
+  .card-link-btn.copied{color:var(--accent,var(--teal));border-color:var(--accent,var(--teal));}
+  .stat-card .card-link-btn{position:absolute;inset-inline-start:0;top:2px;}
   .card-go{
     font-size:12px;font-weight:700;color:var(--accent,var(--teal));
     opacity:0;transform:translateX(4px);transition:.16s ease;
@@ -336,6 +346,7 @@
   }
   a.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--accent,var(--teal));}
   .stat-card .card-top{justify-content:center;position:relative;}
+  .stat-card .card-icon{margin-inline-end:0;}
   .stat-card .card-go{position:absolute;inset-inline-end:0;top:2px;}
   .stat-figure{display:flex;align-items:baseline;justify-content:center;gap:6px;margin:4px 0 0;}
   .stat-number{
@@ -428,7 +439,7 @@
         <div class="card-top">
           <div class="card-icon">🎓</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'rewaa-customer-success-and-communication-skills')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">العرض التعريفي: رِواء ونجاح العملاء ومهارات التواصل<span class="en">Rewaa, Customer Success &amp; Communication Skills</span></div>
         <div class="card-desc">عرض تقديمي شامل للتعريف بشركة رِواء وقيمها ومنتجاتها، إلى جانب مهارات التواصل الفعّال وإتيكيت المكالمات مع العميل — نقطة انطلاق مناسبة للموظف الجديد قبل استكمال بقية أقسام البوابة.</div>
         <div class="card-url">docs.google.com/presentation/d/1hcDY607…</div>
@@ -438,7 +449,7 @@
         <div class="card-top">
           <div class="card-icon">👤</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'csm-role')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">دور موظف نجاح العملاء<span class="en">CSM Role</span></div>
         <div class="card-desc">تعريف شامل لدور موظف نجاح العملاء ومسؤولياته الأساسية ضمن رحلة العميل.</div>
         <div class="card-url">fyousef-2023.github.io/CSM-Role</div>
@@ -448,7 +459,7 @@
         <div class="card-top">
           <div class="card-icon">📅</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'daily-schedule-and-updates-compliance')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الالتزام بالجدول اليومي والتحديثات<span class="en">Daily Schedule &amp; Updates Compliance</span></div>
         <div class="card-desc">معايير الالتزام بتنظيم الجدول اليومي ومتابعة القنوات الرسمية للتحديثات.</div>
         <div class="card-url">fyousef-2023.github.io/calendar</div>
@@ -458,7 +469,7 @@
         <div class="card-top">
           <div class="card-icon">📝</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'documentation-compliance')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الالتزام بالتوثيق<span class="en">Documentation Compliance</span></div>
         <div class="card-desc">معايير توثيق التواصل والإجراءات المتخذة مع العميل بشكل كامل ودقيق.</div>
         <div class="card-url">fyousef-2023.github.io/documentation</div>
@@ -468,7 +479,7 @@
         <div class="card-top">
           <div class="card-icon">🏷️</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'tagging-compliance')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الالتزام بالتاج<span class="en">Tagging Compliance</span></div>
         <div class="card-desc">معايير الالتزام بتصنيف (Tagging) الحالات والتواصل بالشكل الصحيح.</div>
         <div class="card-url">fyousef-2023.github.io/Tagging</div>
@@ -478,7 +489,7 @@
         <div class="card-top">
           <div class="card-icon">📞</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'call-compliance')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الالتزام بالمكالمة<span class="en">Call Compliance</span></div>
         <div class="card-desc">معايير الالتزام بخطوات المكالمة الصحيحة مع العميل حسب نوعها.</div>
         <div class="card-url">fyousef-2023.github.io/-CSM-Call-Checklist</div>
@@ -488,7 +499,7 @@
         <div class="card-top">
           <div class="card-icon">💬</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'chat-response-and-handling-compliance')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الالتزام بالرد والتعامل مع المحادثات<span class="en">Chat Response &amp; Handling Compliance</span></div>
         <div class="card-desc">معايير الالتزام بالرد على محادثات العميل عبر Open CX ضمن الوقت المحدد (SLA)، وإغلاقها وتحويلها بالشكل الصحيح.</div>
         <div class="card-url">fyousef-2023.github.io/chat</div>
@@ -498,7 +509,7 @@
         <div class="card-top">
           <div class="card-icon">🗂️</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'case-management-compliance')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الالتزام بإدارة الحالات<span class="en">Case Management Compliance</span></div>
         <div class="card-desc">معايير الالتزام بفتح الحالات (Cases) وتصنيفها بشكل صحيح ومتابعتها حتى الحل، وتفادي الأخطاء الشائعة في التصنيف والتوثيق.</div>
         <div class="card-url">fyousef-2023.github.io/CaseFollow</div>
@@ -555,7 +566,7 @@
           <div class="card-top">
             <div class="card-icon">🚀</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'activation')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">مراحل التفعيل<span class="en">Activation</span></div>
           <div class="card-desc">تتبّع رحلة تفعيل حساب العميل مرحلة بمرحلة، من بداية الاشتراك حتى اكتمال الاستخدام الفعلي للنظام.</div>
           <div class="card-url">fyousef-2023.github.io/CSM_Stages</div>
@@ -572,7 +583,7 @@
           <div class="card-top">
             <div class="card-icon">⚙️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'onboarding-automation-journey')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
           <div class="card-desc">خارطة تفاعلية توضح خطوات أتمتة تأهيل العميل الجديد (Onboarding).</div>
           <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
@@ -582,7 +593,7 @@
           <div class="card-top">
             <div class="card-icon">📤</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'product-upload')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">رفع المنتجات<span class="en">Product Upload</span></div>
           <div class="card-desc">دليل رفع منتجات العميل على النظام أثناء مرحلة الإعداد والتفعيل.</div>
           <div class="card-url">fyousef-2023.github.io/Product</div>
@@ -591,7 +602,7 @@
         <div class="card-group" id="training">
           <div class="card-top">
             <div class="card-icon">🎓</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'training')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">التدريب<span class="en">Training</span></div>
           <div class="card-desc">دليل شامل يغطي كل ما يخص تدريب موظف نجاح العملاء، مع قناة التحديثات الخاصة بالتدريب.</div>
           <div class="sublinks">
@@ -603,7 +614,7 @@
         <div class="card-group" id="devices">
           <div class="card-top">
             <div class="card-icon">🖥️</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'devices')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">الأجهزة<span class="en">Devices</span></div>
           <div class="card-desc">أسعار الأجهزة الجديدة، وتتبع شحنات الأجهزة المرسلة للعميل.</div>
           <div class="sublinks">
@@ -621,7 +632,7 @@
         <div class="card-group" id="payments">
           <div class="card-top">
             <div class="card-icon">💳</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'payments')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">المدفوعات<span class="en">Payments</span></div>
           <div class="card-desc">أدلة التعامل مع خدمات الدفع من رِواء — كيف تخدم عملاءها وتحل طلباتهم بشكل صحيح.</div>
           <div class="sublinks">
@@ -634,7 +645,7 @@
           <div class="card-top">
             <div class="card-icon">🧾</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'subscription-invoice')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">فاتورة الاشتراك<span class="en">Subscription Invoice</span></div>
           <div class="card-desc">فاتورة الاشتراك هي السجل الرسمي لاشتراك العميل في منصة رِواء، وتشمل الباقة والإضافات وطريقة الدفع وتفاصيل البنود المفوترة، ويوضح الدليل دور موظف نجاح العملاء في مساعدة العميل على الحصول عليها والاطلاع على تفاصيلها.</div>
           <div class="card-url">fyousef-2023.github.io/Invoice</div>
@@ -644,7 +655,7 @@
           <div class="card-top">
             <div class="card-icon">🍽️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'grubtech-csm-guide')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">دليل عملاء Grubtech<span class="en">Grubtech CSM Guide</span></div>
           <div class="card-desc">دليل التعامل مع عملاء Grubtech واحتياجاتهم الخاصة — كيف تخدمهم صح.</div>
           <div class="card-url">fyousef-2023.github.io/Grubtech_CSM_Guide</div>
@@ -654,7 +665,7 @@
           <div class="card-top">
             <div class="card-icon">🔗</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'rewaa-link')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">رواء لينك<span class="en">Rewaa Link</span></div>
           <div class="card-desc">طريقة دفع عن بُعد عبر رابط يُرسل للعميل من عرض سعر في نظام رِواء، يسدّده عبر Apple Pay أو مدى أو فيزا/ماستركارد، وتصدر الفاتورة تلقائيًا بعد الدفع.</div>
           <div class="card-url">fyousef-2023.github.io/RewaaLink</div>
@@ -671,7 +682,7 @@
         <div class="card-group" id="packages">
           <div class="card-top">
             <div class="card-icon">📦</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'packages')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">الباقات<span class="en">Packages</span></div>
           <div class="card-desc">روابط باقات رِواء الحالية والقديمة، لمراجعة خصائص كل باقة عند التعامل مع العميل.</div>
           <div class="sublinks">
@@ -694,7 +705,7 @@
           <div class="card-top">
             <div class="card-icon">🔁</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'customer-reactivation')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">إعادة التفعيل<span class="en">Customer Reactivation</span></div>
           <div class="card-desc">رحلة إعادة تفعيل العميل المتوقف عن الاستخدام، من رصد التوقف حتى عودته للنشاط الفعلي.</div>
           <div class="card-url">fyousef-2023.github.io/Reactivation</div>
@@ -712,7 +723,7 @@
           <div class="card-top">
             <div class="card-icon">🗂️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'cases')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">دليل إدارة الحالات<span class="en">Cases</span></div>
           <div class="card-desc">دليل شامل للتذاكر والحالات (Cases) بمختلف أنواعها، وخطوات التعامل الصحيح مع كل نوع منها.</div>
           <div class="card-url">fyousef-2023.github.io/CasesV2</div>
@@ -722,7 +733,7 @@
           <div class="card-top">
             <div class="card-icon">⚙️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'onboarding-automation-journey-2')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">رحلة أتمتة الإعداد<span class="en">Onboarding Automation Journey</span></div>
           <div class="card-desc">خلال مرحلة الإعداد (Onboarding) تُفتح تاسكات تحتاج للمتابعة — هذا الدليل يوضح خطوات الأتمتة وطريقة التعامل الصحيحة مع هذه التاسكات.</div>
           <div class="card-url">fyousef-2023.github.io/Onboarding-Automation</div>
@@ -732,7 +743,7 @@
           <div class="card-top">
             <div class="card-icon">🏛️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'monshaat-cases')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">حالات عملاء منشآت<span class="en">Monshaat Cases</span></div>
           <div class="card-desc">مع عملاء منشآت تُفتح حالات (Cases) خاصة للتأكد من استلامهم الطلب — هذا الرابط يوضح طريقة التعامل الصحيحة مع هذه الحالات.</div>
           <div class="card-url">fyousef-2023.github.io/monshaat</div>
@@ -742,7 +753,7 @@
           <div class="card-top">
             <div class="card-icon">🌟</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'nps-case-handling-guide')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">دليل التعامل مع حالات NPS<span class="en">NPS Case Handling Guide</span></div>
           <div class="card-desc">دليل التعامل مع حالات التقييم المنخفض في NPS (من 0 إلى 6) عبر Zoho CRM — خطوات التواصل مع العميل، تنسيق المعالجة وتوثيقها، وإغلاق الحالة بالشكل الصحيح.</div>
           <div class="card-url">docs.google.com/document/d/179YX3rN7…</div>
@@ -760,7 +771,7 @@
           <div class="card-top">
             <div class="card-icon">📋</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'standard-operating-procedures')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">SOP — إجراءات العمل الموحّدة<span class="en">Standard Operating Procedures</span></div>
           <div class="card-desc">مرجع الحالات والإجراءات الموحّدة — كيف تتعامل مع كل سيناريو بشكل صحيح. سيتم إطلاقها قريباً.</div>
           <div class="card-url">rewaa-cx-portal-frontend-3u9n.onrender.com/sop-builder</div>
@@ -778,7 +789,7 @@
           <div class="card-top">
             <div class="card-icon">🏛️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'e-invoicing-support')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="stat-figure">
             <span class="stat-number">2,500</span>
             <span class="stat-unit">ريال</span>
@@ -792,7 +803,7 @@
           <div class="card-top">
             <div class="card-icon">🏢</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'monsha-at-support')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="stat-figure">
             <span class="stat-number">1,500</span>
             <span class="stat-unit">ريال</span>
@@ -806,7 +817,7 @@
           <div class="card-top">
             <div class="card-icon">🎁</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'rewaa-cashback')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="stat-figure">
             <span class="stat-number">🎁</span>
           </div>
@@ -834,7 +845,7 @@
           <div class="card-top">
             <div class="card-icon">🏢</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'rewaa-platform-introduction')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">مقدمة وتأهيل منصة رِواء<span class="en">Rewaa Platform Introduction</span></div>
           <div class="card-desc">تعريف بمنصة رِواء السحابية ومتطلبات تشغيلها، مع روابط للتعرف على الشركة وأكاديميتها وتسجيل الدخول وإنشاء الحساب.</div>
           <div class="card-url">scribehow.com/o/RP0ycIc3SFOSm8rov-EIkg…</div>
@@ -844,7 +855,7 @@
           <div class="card-top">
             <div class="card-icon">🛟</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'rewaa-help-center')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">مركز المساعدة<span class="en">Rewaa Help Center</span></div>
           <div class="card-desc">مركز مساعدة رِواء الرسمي، يُحدَّث باستمرار من قسم تجربة العميل بمقالات ودلائل الاستخدام.</div>
           <div class="card-url">help.rewaa.com/ar-SA</div>
@@ -854,7 +865,7 @@
           <div class="card-top">
             <div class="card-icon">▶️</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'rewaa-youtube-channel')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">قناة رِواء على يوتيوب<span class="en">Rewaa YouTube Channel</span></div>
           <div class="card-desc">قوائم تشغيل فيديو تعليمية وتعريفية بمنتجات وخدمات رِواء.</div>
           <div class="card-url">youtube.com/@RewaaTechnology/playlists</div>
@@ -864,7 +875,7 @@
           <div class="card-top">
             <div class="card-icon">💬</div>
             <div class="card-go">افتح ↖</div>
-          </div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'open-cx-quick-replies')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
           <div class="card-title">دليل الردود السريعة<span class="en">Open CX Quick Replies</span></div>
           <div class="card-desc">قائمة الردود الجاهزة (Quick Replies) المستخدمة داخل منصة Open CX لتوحيد أسلوب التواصل مع العميل.</div>
           <div class="card-url">docs.google.com/spreadsheets/d/1rnUH9_Mx…</div>
@@ -890,7 +901,7 @@
       <div class="card-group" id="open-cx">
         <div class="card-top">
           <div class="card-icon">📥</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'open-cx')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">Open CX</div>
         <div class="card-desc">الأداة المعتمدة لإرسال واستقبال رسائل العملاء وشكاواهم واستفساراتهم، وتتميز بسهولة استخدامها وتوفير ردود سريعة جاهزة (Quick Replies).</div>
         <div class="sublinks">
@@ -903,7 +914,7 @@
         <div class="card-top">
           <div class="card-icon">🗂️</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'crm')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">نظام إدارة علاقات العملاء<span class="en">CRM</span></div>
         <div class="card-desc">يجمع نظام الـ CRM كل البيانات المتعلقة بالعميل ويربطها ويحلّلها — معلومات العميل، التفاعلات مع ممثلي الشركة، المشتريات، طلبات الخدمة، الأصول، والمقترحات/عروض الأسعار — ويتيح للمستخدمين فهم ما حدث في كل نقطة تواصل. هدفه الأساسي إدارة بيانات العملاء.</div>
         <div class="card-url">crm.zoho.com/crm/org709483323/…</div>
@@ -913,7 +924,7 @@
         <div class="card-top">
           <div class="card-icon">📊</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'metabase')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">قاعدة بيانات العملاء<span class="en">Metabase</span></div>
         <div class="card-desc">قاعدة البيانات لكل معلومات عملائنا، وتنعكس بياناتها على حساب العميل في CRM. من خلالها يتابع كل موظف نجاح عملاء (مدير حساب) محفظة عملائه (BOB).</div>
         <div class="card-url">bi-internal.platform.rewaatech.com/…</div>
@@ -922,7 +933,7 @@
       <div class="card-group" id="maqsam">
         <div class="card-top">
           <div class="card-icon">☎️</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'maqsam')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">Maqsam</div>
         <div class="card-desc">برنامج الاتصال المعتمد — يجب البدء بالاتصال منه، ومحاولة الاتصال 3 مرات في حال عدم رد العميل قبل الانتقال لأي أداة اتصال أخرى، مع إضافة التاج المناسب على كل مكالمة.</div>
         <div class="sublinks">
@@ -935,7 +946,7 @@
         <div class="card-top">
           <div class="card-icon">📲</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'3cx')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">3CX</div>
         <div class="card-desc">برنامج الاتصال الثاني — يُستخدم في حال عدم رد العميل على Maqsam بعد 3 محاولات، أو بناءً على توجيه من الإدارة.</div>
         <div class="card-url">rewaa-tech.3cx.ae/#/people</div>
@@ -945,7 +956,7 @@
         <div class="card-top">
           <div class="card-icon">🧾</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'admin-panel')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">Admin Panel</div>
         <div class="card-desc">لإصدار فواتير Upselling للعميل (مثل شراء أجهزة أو إضافة موقع)، أو للحصول على رابط الدخول لحساب العميل عند اللزوم.</div>
         <div class="card-url">admin.platform.rewaatech.com/accounts/list</div>
@@ -954,7 +965,7 @@
       <div class="card-group" id="frill">
         <div class="card-top">
           <div class="card-icon">💡</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'frill')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">منصة الاقتراحات<span class="en">Frill</span></div>
         <div class="card-desc">منصة يقترح من خلالها العملاء أفكارًا وتحسينات لمنصة رِواء، ويتابعون حالتها أولاً بأول.</div>
         <ol class="steps">
@@ -984,7 +995,7 @@
               <path d="M79.9 93.1c-7.3 0-13.2-5.9-13.2-13.2 0-7.3 5.9-13.2 13.2-13.2h33.1c7.3 0 13.2 5.9 13.2 13.2 0 7.3-5.9 13.2-13.2 13.2H79.9z" fill="#ecb22e"/>
             </svg>
           </div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'related-slack-channels')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">قنوات Slack ذات الصلة<span class="en">Related Slack Channels</span></div>
         <div class="card-desc">قنوات Slack الأساسية للتواصل مع فريق المنتج ومتابعة تحديثات المنصة.</div>
         <div class="sublinks">
@@ -1023,7 +1034,7 @@
         <div class="card-top">
           <div class="card-icon">🪪</div>
           <div class="card-go">عرض القسم ↑</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'role-and-commitments')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">الدور والالتزامات<span class="en">Role &amp; Commitments</span></div>
         <div class="card-desc">جميع معايير الالتزام الأساسية بالدور — الجدول اليومي، التوثيق، التصنيف، المكالمات، والمحادثات — في بداية الصفحة.</div>
         <div class="card-url">أعلى الصفحة</div>
@@ -1033,7 +1044,7 @@
         <div class="card-top">
           <div class="card-icon">🎯</div>
           <div class="card-go">افتح ↖</div>
-        </div>
+        <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'csm-quality-criteria')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
         <div class="card-title">معايير جودة التعامل مع العملاء<span class="en">CSM Quality Criteria</span></div>
         <div class="card-desc">دليل تفاعلي لمعايير جودة التعامل مع العملاء المعتمدة في تقييم المكالمات والحالات.</div>
         <div class="card-url">fyousef-2023.github.io/CSM_Quality_Criteria_Interactive</div>
@@ -1046,5 +1057,50 @@
     <span>إعداد: قسم الجودة — فريق نجاح العملاء · رِواء</span>
     <span>آخر تحديث: نوفمبر 2026</span>
   </footer>
+
+<script>
+var PORTAL_BASE = 'https://fyousef-2023.github.io/CSM-PORTAL/';
+function copyCardLink(ev, id){
+  ev.preventDefault();
+  ev.stopPropagation();
+  var url = PORTAL_BASE + '#' + id;
+  var btn = ev.currentTarget;
+  var original = btn.textContent;
+  function done(ok){
+    btn.textContent = ok ? '✓' : '⚠';
+    btn.classList.add('copied');
+    setTimeout(function(){
+      btn.textContent = original;
+      btn.classList.remove('copied');
+    }, 1500);
+  }
+  function fallbackCopy(){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      done(ok);
+    }catch(e){
+      done(false);
+    }
+  }
+  try{
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ done(true); }, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  }catch(e){
+    fallbackCopy();
+  }
+  return false;
+}
+</script>
 
 </body>
