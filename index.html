@@ -401,10 +401,15 @@
   }
   footer span{font-size:12px;color:var(--text-faint);}
 
+  /* ===== Page layout (content + sticky side nav) ===== */
+  .page-layout{display:flex;align-items:flex-start;}
+  .page-main{flex:1 1 auto;min-width:0;}
+
   /* ===== Side index nav ===== */
   .side-nav{
-    position:fixed;top:50%;right:0;transform:translateY(-50%);
-    z-index:600;display:flex;align-items:stretch;
+    order:-1;position:sticky;top:16px;align-self:flex-start;
+    flex-shrink:0;z-index:600;display:flex;align-items:flex-start;
+    margin-inline-start:14px;
   }
   .side-nav-tab{
     width:40px;height:72px;flex-shrink:0;border:none;cursor:pointer;
@@ -415,7 +420,7 @@
   }
   .side-nav-tab:hover{background:var(--teal-tint);}
   .side-nav-panel{
-    width:300px;max-height:76vh;overflow-y:auto;flex-shrink:0;
+    width:300px;flex-shrink:0;
     background:var(--surface);border:1px solid var(--border);border-radius:12px 0 0 12px;
     box-shadow:var(--shadow-md);padding:10px;
     opacity:0;visibility:hidden;pointer-events:none;
@@ -453,17 +458,21 @@
   }
   .side-nav-subsec:hover{background:var(--teal-tint);}
   .row-group{scroll-margin-top:96px;}
-  body.nav-pinned{padding-right:336px;}
 
+  @media (max-width:900px){
+    .page-layout{flex-direction:column;}
+    .side-nav{position:static;margin-inline-start:0;margin-bottom:10px;}
+  }
   @media (max-width:640px){
     .hero h1{font-size:26px;}
     .section-head{flex-direction:column;gap:10px;padding-inline-start:14px;}
     .side-nav-panel{width:min(78vw,300px);}
-    body.nav-pinned{padding-right:0;}
   }
 </style>
 
 <body dir="rtl" lang="ar">
+  <div class="page-layout">
+    <div class="page-main">
 
   <div class="topbar">
     <div class="topbar-inner">
@@ -484,94 +493,6 @@
     </div>
   </div>
 
-  <div class="side-nav" id="sideNav">
-    <button type="button" class="side-nav-tab" id="sideNavTab" aria-expanded="false" aria-controls="sideNavPanel" aria-label="فهرس الأقسام والبطاقات" title="فهرس الأقسام والبطاقات">📑</button>
-    <nav class="side-nav-panel" id="sideNavPanel" aria-label="فهرس الأقسام والبطاقات">
-      <div class="side-nav-group">
-        <div class="side-nav-sec-row">
-          <a class="side-nav-sec" href="#role"><span>🪪</span><span>الدور والالتزامات</span></a>
-          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين الدور والالتزامات"><span class="chev">›</span></button>
-        </div>
-        <div class="side-nav-items" hidden>
-          <a class="side-nav-item" href="#rewaa-customer-success-and-communication-skills">العرض التعريفي: رِواء ونجاح العملاء ومهارات التواصل</a>
-          <a class="side-nav-item" href="#csm-role">دور موظف نجاح العملاء</a>
-          <a class="side-nav-item" href="#daily-schedule-and-updates-compliance">الالتزام بالجدول اليومي والتحديثات</a>
-          <a class="side-nav-item" href="#documentation-compliance">الالتزام بالتوثيق</a>
-          <a class="side-nav-item" href="#tagging-compliance">الالتزام بالتاج</a>
-          <a class="side-nav-item" href="#call-compliance">الالتزام بالمكالمة</a>
-          <a class="side-nav-item" href="#chat-response-and-handling-compliance">الالتزام بالرد والتعامل مع المحادثات</a>
-          <a class="side-nav-item" href="#case-management-compliance">الالتزام بإدارة الحالات</a>
-        </div>
-      </div>
-      <div class="side-nav-group">
-        <a class="side-nav-sec" href="#journey"><span>🗺️</span><span>رحلة العميل</span></a>
-      </div>
-      <div class="side-nav-group">
-        <div class="side-nav-sec-row">
-          <a class="side-nav-sec" href="#knowledge"><span>📚</span><span>المصادر المعرفية</span></a>
-          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين المصادر المعرفية"><span class="chev">›</span></button>
-        </div>
-        <div class="side-nav-items" hidden>
-          <a class="side-nav-subsec" href="#activation">التفعيل</a>
-          <a class="side-nav-item" href="#onboarding-automation-journey">رحلة أتمتة الإعداد</a>
-          <a class="side-nav-item" href="#product-upload">رفع المنتجات</a>
-          <a class="side-nav-item" href="#training">التدريب</a>
-          <a class="side-nav-item" href="#devices">الأجهزة</a>
-          <a class="side-nav-item" href="#payments">المدفوعات</a>
-          <a class="side-nav-item" href="#subscription-invoice">فاتورة الاشتراك</a>
-          <a class="side-nav-item" href="#grubtech-csm-guide">دليل عملاء Grubtech</a>
-          <a class="side-nav-item" href="#rewaa-link">رواء لينك</a>
-          <a class="side-nav-subsec" href="#packages">الباقات</a>
-          <a class="side-nav-subsec" href="#customer-reactivation">إعادة التفعيل</a>
-          <a class="side-nav-subsec" href="#case-management">إدارة الحالات</a>
-          <a class="side-nav-item" href="#cases">دليل إدارة الحالات</a>
-          <a class="side-nav-item" href="#onboarding-automation-journey-2">رحلة أتمتة الإعداد</a>
-          <a class="side-nav-item" href="#monshaat-cases">حالات عملاء منشآت</a>
-          <a class="side-nav-item" href="#nps-case-handling-guide">دليل التعامل مع حالات NPS</a>
-          <a class="side-nav-subsec" href="#standard-operating-procedures">قريبًا</a>
-          <a class="side-nav-subsec" href="#incentive-programs">برامج الدعم والحوافز</a>
-          <a class="side-nav-item" href="#e-invoicing-support">دعم الفوترة الإلكترونية</a>
-          <a class="side-nav-item" href="#monsha-at-support">دعم مزايا (منشآت)</a>
-          <a class="side-nav-item" href="#rewaa-cashback">كاش باك من رِواء</a>
-          <a class="side-nav-subsec" href="#other-knowledge-resources">بقية المصادر المعرفية</a>
-          <a class="side-nav-item" href="#rewaa-platform-introduction">مقدمة وتأهيل منصة رِواء</a>
-          <a class="side-nav-item" href="#rewaa-help-center">مركز المساعدة</a>
-          <a class="side-nav-item" href="#rewaa-youtube-channel">قناة رِواء على يوتيوب</a>
-          <a class="side-nav-item" href="#open-cx-quick-replies">دليل الردود السريعة</a>
-        </div>
-      </div>
-      <div class="side-nav-group">
-        <div class="side-nav-sec-row">
-          <a class="side-nav-sec" href="#tools"><span>🧰</span><span>البرامج والأدوات</span></a>
-          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين البرامج والأدوات"><span class="chev">›</span></button>
-        </div>
-        <div class="side-nav-items" hidden>
-          <a class="side-nav-item" href="#open-cx">Open CX</a>
-          <a class="side-nav-item" href="#crm">نظام إدارة علاقات العملاء</a>
-          <a class="side-nav-item" href="#metabase">قاعدة بيانات العملاء</a>
-          <a class="side-nav-item" href="#maqsam">Maqsam</a>
-          <a class="side-nav-item" href="#3cx">3CX</a>
-          <a class="side-nav-item" href="#admin-panel">Admin Panel</a>
-          <a class="side-nav-item" href="#frill">منصة الاقتراحات</a>
-          <a class="side-nav-item" href="#related-slack-channels">قنوات Slack ذات الصلة</a>
-          <a class="side-nav-subsec" href="#platform-apps-links">روابط المنصة والتطبيقات</a>
-          <a class="side-nav-subsec" href="#helper-tools">برامج وأدوات مساعدة</a>
-          <a class="side-nav-item" href="#remote-access-tools">برامج الربط عن بُعد</a>
-          <a class="side-nav-item" href="#screen-recording-tools">برامج التصوير</a>
-        </div>
-      </div>
-      <div class="side-nav-group">
-        <div class="side-nav-sec-row">
-          <a class="side-nav-sec" href="#quality"><span>✅</span><span>الالتزام والجودة</span></a>
-          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين الالتزام والجودة"><span class="chev">›</span></button>
-        </div>
-        <div class="side-nav-items" hidden>
-          <a class="side-nav-item" href="#role-and-commitments">الدور والالتزامات</a>
-          <a class="side-nav-item" href="#csm-quality-criteria">معايير جودة التعامل مع العملاء</a>
-        </div>
-      </div>
-    </nav>
-  </div>
 
   <div class="hero">
     <div class="hero-eyebrow">🧭 المرجع الموحّد لفريق نجاح العملاء</div>
@@ -732,7 +653,24 @@
       </div>
     </div>
 
-    <!-- الصف 1.5 — الإعداد والأتمتة -->
+    <!-- مركز التهيئة -->
+    <div class="row-group">
+      <div class="row-label">مركز التهيئة</div>
+      <div class="grid-1">
+
+        <a class="card" id="getting-started-hub" href="https://fyousef-2023.github.io/Getting-Started-Hub/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-icon">🧭</div>
+            <div class="card-go">افتح ↖</div>
+          <button type="button" class="card-link-btn" onclick="return copyCardLink(event,'getting-started-hub')" aria-label="نسخ رابط البطاقة" title="نسخ رابط البطاقة">🔗</button></div>
+          <div class="card-title">مركز التهيئة<span class="en">Getting Started Hub</span></div>
+          <div class="card-desc">مركز التهيئة داخل تطبيق مساعد رِواء الذكي — نقطة انطلاق العميل الجديد لإكمال خطوات الإعداد والتفعيل بعد التسجيل.</div>
+          <div class="card-url">fyousef-2023.github.io/Getting-Started-Hub</div>
+        </a>
+
+      </div>
+    </div>
+
     <!-- الصف 1.5 — الإعداد والأتمتة -->
     <div class="row-group">
       <div class="grid-3">
@@ -1316,6 +1254,99 @@
     <span>إعداد: قسم الجودة — فريق نجاح العملاء · رِواء</span>
     <span>آخر تحديث: نوفمبر 2026</span>
   </footer>
+    </div>
+
+  <div class="side-nav" id="sideNav">
+    <button type="button" class="side-nav-tab" id="sideNavTab" aria-expanded="false" aria-controls="sideNavPanel" aria-label="فهرس الأقسام والبطاقات" title="فهرس الأقسام والبطاقات">📑</button>
+    <nav class="side-nav-panel" id="sideNavPanel" aria-label="فهرس الأقسام والبطاقات">
+      <div class="side-nav-group">
+        <div class="side-nav-sec-row">
+          <a class="side-nav-sec" href="#role"><span>🪪</span><span>الدور والالتزامات</span></a>
+          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين الدور والالتزامات"><span class="chev">›</span></button>
+        </div>
+        <div class="side-nav-items" hidden>
+          <a class="side-nav-item" href="#rewaa-customer-success-and-communication-skills">العرض التعريفي: رِواء ونجاح العملاء ومهارات التواصل</a>
+          <a class="side-nav-item" href="#csm-role">دور موظف نجاح العملاء</a>
+          <a class="side-nav-item" href="#daily-schedule-and-updates-compliance">الالتزام بالجدول اليومي والتحديثات</a>
+          <a class="side-nav-item" href="#documentation-compliance">الالتزام بالتوثيق</a>
+          <a class="side-nav-item" href="#tagging-compliance">الالتزام بالتاج</a>
+          <a class="side-nav-item" href="#call-compliance">الالتزام بالمكالمة</a>
+          <a class="side-nav-item" href="#chat-response-and-handling-compliance">الالتزام بالرد والتعامل مع المحادثات</a>
+          <a class="side-nav-item" href="#case-management-compliance">الالتزام بإدارة الحالات</a>
+        </div>
+      </div>
+      <div class="side-nav-group">
+        <a class="side-nav-sec" href="#journey"><span>🗺️</span><span>رحلة العميل</span></a>
+      </div>
+      <div class="side-nav-group">
+        <div class="side-nav-sec-row">
+          <a class="side-nav-sec" href="#knowledge"><span>📚</span><span>المصادر المعرفية</span></a>
+          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين المصادر المعرفية"><span class="chev">›</span></button>
+        </div>
+        <div class="side-nav-items" hidden>
+          <a class="side-nav-subsec" href="#activation">التفعيل</a>
+          <a class="side-nav-subsec" href="#getting-started-hub">مركز التهيئة</a>
+          <a class="side-nav-item" href="#onboarding-automation-journey">رحلة أتمتة الإعداد</a>
+          <a class="side-nav-item" href="#product-upload">رفع المنتجات</a>
+          <a class="side-nav-item" href="#training">التدريب</a>
+          <a class="side-nav-item" href="#devices">الأجهزة</a>
+          <a class="side-nav-item" href="#payments">المدفوعات</a>
+          <a class="side-nav-item" href="#subscription-invoice">فاتورة الاشتراك</a>
+          <a class="side-nav-item" href="#grubtech-csm-guide">دليل عملاء Grubtech</a>
+          <a class="side-nav-item" href="#rewaa-link">رواء لينك</a>
+          <a class="side-nav-subsec" href="#packages">الباقات</a>
+          <a class="side-nav-subsec" href="#customer-reactivation">إعادة التفعيل</a>
+          <a class="side-nav-subsec" href="#case-management">إدارة الحالات</a>
+          <a class="side-nav-item" href="#cases">دليل إدارة الحالات</a>
+          <a class="side-nav-item" href="#onboarding-automation-journey-2">رحلة أتمتة الإعداد</a>
+          <a class="side-nav-item" href="#monshaat-cases">حالات عملاء منشآت</a>
+          <a class="side-nav-item" href="#nps-case-handling-guide">دليل التعامل مع حالات NPS</a>
+          <a class="side-nav-subsec" href="#standard-operating-procedures">قريبًا</a>
+          <a class="side-nav-subsec" href="#incentive-programs">برامج الدعم والحوافز</a>
+          <a class="side-nav-item" href="#e-invoicing-support">دعم الفوترة الإلكترونية</a>
+          <a class="side-nav-item" href="#monsha-at-support">دعم مزايا (منشآت)</a>
+          <a class="side-nav-item" href="#rewaa-cashback">كاش باك من رِواء</a>
+          <a class="side-nav-subsec" href="#other-knowledge-resources">بقية المصادر المعرفية</a>
+          <a class="side-nav-item" href="#rewaa-platform-introduction">مقدمة وتأهيل منصة رِواء</a>
+          <a class="side-nav-item" href="#rewaa-help-center">مركز المساعدة</a>
+          <a class="side-nav-item" href="#rewaa-youtube-channel">قناة رِواء على يوتيوب</a>
+          <a class="side-nav-item" href="#open-cx-quick-replies">دليل الردود السريعة</a>
+        </div>
+      </div>
+      <div class="side-nav-group">
+        <div class="side-nav-sec-row">
+          <a class="side-nav-sec" href="#tools"><span>🧰</span><span>البرامج والأدوات</span></a>
+          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين البرامج والأدوات"><span class="chev">›</span></button>
+        </div>
+        <div class="side-nav-items" hidden>
+          <a class="side-nav-item" href="#open-cx">Open CX</a>
+          <a class="side-nav-item" href="#crm">نظام إدارة علاقات العملاء</a>
+          <a class="side-nav-item" href="#metabase">قاعدة بيانات العملاء</a>
+          <a class="side-nav-item" href="#maqsam">Maqsam</a>
+          <a class="side-nav-item" href="#3cx">3CX</a>
+          <a class="side-nav-item" href="#admin-panel">Admin Panel</a>
+          <a class="side-nav-item" href="#frill">منصة الاقتراحات</a>
+          <a class="side-nav-item" href="#related-slack-channels">قنوات Slack ذات الصلة</a>
+          <a class="side-nav-subsec" href="#platform-apps-links">روابط المنصة والتطبيقات</a>
+          <a class="side-nav-subsec" href="#helper-tools">برامج وأدوات مساعدة</a>
+          <a class="side-nav-item" href="#remote-access-tools">برامج الربط عن بُعد</a>
+          <a class="side-nav-item" href="#screen-recording-tools">برامج التصوير</a>
+        </div>
+      </div>
+      <div class="side-nav-group">
+        <div class="side-nav-sec-row">
+          <a class="side-nav-sec" href="#quality"><span>✅</span><span>الالتزام والجودة</span></a>
+          <button type="button" class="side-nav-toggle" aria-expanded="false" aria-label="عرض عناوين الالتزام والجودة"><span class="chev">›</span></button>
+        </div>
+        <div class="side-nav-items" hidden>
+          <a class="side-nav-item" href="#role-and-commitments">الدور والالتزامات</a>
+          <a class="side-nav-item" href="#csm-quality-criteria">معايير جودة التعامل مع العملاء</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  </div>
 
 <script>
 var PORTAL_BASE = 'https://fyousef-2023.github.io/CSM-PORTAL/';
@@ -1369,7 +1400,6 @@ function copyCardLink(ev, id){
   function isWide(){ return wideQuery.matches; }
   function setOpen(isOpen){
     nav.classList.toggle('open', isOpen);
-    document.body.classList.toggle('nav-pinned', isOpen && isWide());
     tab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
   setOpen(isWide());
